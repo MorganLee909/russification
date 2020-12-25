@@ -43,23 +43,31 @@ fn dashboard_ejs(file: &str) {
     };
 
     // TODO: get translations for the the cards on the analytics page
-    contents = contents.replace("DASHBOARD", "ГЛАВНАЯ");
-    contents = contents.replace("INGREDIENTS", "ИНГРЕДИЕНТЫ");
-    contents = contents.replace("RECIPE BOOK", "КНИГА РЕЦЕПТОВ");
-    contents = contents.replace("ANALYTICS", "АНАЛИТИКА");
-    contents = contents.replace("ORDERS", "ЗАКАЗЫ");
-    contents = contents.replace("TRANSACTIONS", "ТРАНЗАКЦИИ");
-    contents = contents.replace("LOGOUT", "ВЫХОД");
-    contents = contents.replace("INGREDIENT INVENTORY", "ИНГРЕДИЕНТЫ");
-    contents = contents.replace("Total Revenue (month)", "Общий доход (месяц)");
-    contents = contents.replace("Inventory Check", "Проверить Ингредиеты");
-    contents = contents.replace(">Update", ">ОБНОВИТЬ");
-    contents = contents.replace("UPDATE", "ОБНОВИТЬ");
-    contents = contents.replace("NEW", "НОВЫЙ");
-    contents = contents.replace("RECIPES", "РЕЦЕПТЫ");
-    contents = contents.replace("Date Range:", "Диапазон Дат:");
-    contents = contents.replace("SUBMIT", "РАЗМЕСТИТЬ");
-    contents = contents.replace("FILTER", "ФИЛЬТРОВАТЬ");
+    let changes = [
+        "DASHBOARD", "ГЛАВНАЯ",
+        "INGREDIENTS", "ИНГРЕДИЕНТЫ",
+        "RECIPE BOOK", "КНИГА РЕЦЕПТОВ",
+        "ANALYTICS", "АНАЛИТИКА",
+        "ORDERS", "ЗАКАЗЫ",
+        "TRANSACTIONS", "ТРАНЗАКЦИИ",
+        "LOGOUT", "ВЫХОД",
+        "INGREDIENT INVENTORY", "ИНГРЕДИЕНТЫ",
+        "Total Revenue (month)", "Общий доход (месяц)",
+        "Inventory Check", "Проверить Ингредиеты",
+        ">Update", ">ОБНОВИТЬ",
+        "UPDATE", "ОБНОВИТЬ",
+        "NEW", "НОВЫЙ",
+        "RECIPES", "РЕЦЕПТЫ",
+        "Date Range:", "Диапазон Дат:",
+        "SUBMIT", "РАЗМЕСТИТЬ",
+        "FILTER", "ФИЛЬТРОВАТЬ"
+    ];
+
+    let mut i = 0;
+    while i < changes.len() {
+        contents = contents.replace(changes[i], changes[i+1]);
+        i += 2;
+    }
     
     match write_file(file, contents) {
         Err(e) => panic!(e),
@@ -73,10 +81,18 @@ fn edit_ingredient_ejs(file: &String) {
         Err(e) => panic!(e)
     };
 
-    contents = contents.replace("NAME", "НАЗВАНИЕ");
-    contents = contents.replace("CATEGORY", "КАТЕГОРИЯ");
-    contents = contents.replace("MEASUREMENT UNIT", "ЕДИНИЦА ИЗМЕРЕНИЯ");
-    contents = contents.replace("SUBMIT", "РАЗМЕСТИТЬ");
+    let changes = [
+        "NAME", "НАЗВАНИЕ",
+        "CATEGORY", "КАТЕГОРИЯ",
+        "MEASUREMENT UNIT", "ЕДИНИЦА ИЗМЕРЕНИЯ",
+        "SUBMIT", "РАЗМЕСТИТЬ"
+    ];
+
+    let mut i = 0;
+    while i < changes.len() {
+        contents = contents.replace(changes[i], changes[i+1]);
+        i += 2;
+    }
 
     match write_file(file, contents) {
         Err(e) => panic!(e),
@@ -90,11 +106,19 @@ fn edit_recipe_ejs(file: &str) {
         Err(e) => panic!(e)
     };
 
-    contents = contents.replace("NAME", "НАЗВАНИЕ");
-    contents = contents.replace("INGREDIENTS", "ИНГРЕДИЕНТЫ");
-    contents = contents.replace("PRICE", "ЦЕНА");
-    contents = contents.replace("UPDATE", "ОБНОВИТЬ");
-    contents = contents.replace("CANCEL", "ОТМЕНИТЬ");
+    let changes = [
+        "NAME", "НАЗВАНИЕ",
+        "INGREDIENTS", "ИНГРЕДИЕНТЫ",
+        "PRICE", "ЦЕНА",
+        "UPDATE", "ОБНОВИТЬ",
+        "CANCEL", "ОТМЕНИТЬ"
+    ];
+
+    let mut i = 0;
+    while i < changes.len() {
+        contents = contents.replace(changes[i], changes[i+1]);
+        i += 2;
+    }
 
     match write_file(file, contents) {
         Err(e) => panic!(e),
@@ -109,8 +133,16 @@ fn ingredient_details_ejs(file: &str) {
     };
 
     // TODO: translate "Average daily use"
-    contents = contents.replace("CURRENT STOCK", "ТЕКУЩИЙ ЗАПАС");
-    contents = contents.replace("RECIPES", "РЕЦЕПТЫ");
+    let changes = [
+        "CURRENT STOCK", "ТЕКУЩИЙ ЗАПАС",
+        "RECIPES", "РЕЦЕПТЫ"
+    ];
+
+    let mut i = 0;
+    while i < changes.len() {
+        contents = contents.replace(changes[i], changes[i+1]);
+        i += 2;
+    }
 
     match write_file(file, contents) {
         Err(e) => panic!(e),
@@ -123,42 +155,49 @@ fn new_ingredient_ejs(file: &str) {
         Ok(contents) => contents,
         Err(e) => panic!(e)
     };
-    
+
     // TODO: need good translation for "EACH"
     // TODO: need transaction for spreadhseet upload link
-    contents = contents.replace("CREATE INGREDIENT", "СОЗДАТЬ ИНГРИДИЕНТ");
-    contents = contents.replace("NAME", "НАЗВАНИЕ");
-    contents = contents.replace("CATEGORY", "КАТЕГОРИЯ");
-    contents = contents.replace("QUANTITY", "КОЛИЧЕСТВО");
-    contents = contents.replace("UNIT", "ЕДИНИЦА");
-    contents = contents.replace(">G<", ">Г<");
-    contents = contents.replace(">KG<", ">КГ<");
-    contents = contents.replace("<option type=\"mass\" value=\"oz\">OZ</option>", "");
-    contents = contents.replace("<option type=\"mass\" value=\"lb\">LB</option>", "");
-    contents = contents.replace(">ML<", ">МЛ<");
-    contents = contents.replace(">L<", ">Л<");
-    contents = contents.replace("<option type=\"volume\" value=\"tsp\">TSP</option>", "");
-    contents = contents.replace("<option type=\"volume\" value=\"tbsp\">TBSP</option>", "");
-    contents = contents.replace("<option type=\"volume\" value=\"ozfl\">OZ. FL</option>", "");
-    contents = contents.replace("<option type=\"volume\" value=\"cup\">CUP</option>", "");
-    contents = contents.replace("<option type=\"volume\" value=\"pt\">PT</option>", "");
-    contents = contents.replace("<option type=\"volume\" value=\"qt\">QT</option>", "");
-    contents = contents.replace("<option type=\"volume\" value=\"gal\">GAL</option>", "");
-    contents = contents.replace(">MM<", ">ММ<");
-    contents = contents.replace(">CM<", ">СМ<");
-    contents = contents.replace(">M<", ">М<");
-    contents = contents.replace("<option type=\"length\" value=\"in\">IN</option>", "");
-    contents = contents.replace("<option type=\"length\" value=\"ft\">FT</option>", "");
-    contents = contents.replace("BOTTLE SIZE", "РАЗМЕР БУТЫЛКИ");
-    contents = contents.replace("BOTTLE", "БУТЫЛКА");
-    contents = contents.replace("CREATE", "СОЗДАТЬ");
-    contents = contents.replace("<option value=\"tsp\">TSP</option>", "");
-    contents = contents.replace("<option value=\"tbsp\">TBSP</option>", "");
-    contents = contents.replace("<option value=\"ozfl\">OZ. FL</option>", "");
-    contents = contents.replace("<option value=\"cup\">CUP</option>", "");
-    contents = contents.replace("<option value=\"pt\">PT</option>", "");
-    contents = contents.replace("<option value=\"qt\">QT</option>", "");
-    contents = contents.replace("<option value=\"gal\">GAL</option>", "");
+    let changes = [
+        "CREATE INGREDIENT", "СОЗДАТЬ ИНГРИДИЕНТ",
+        "NAME", "НАЗВАНИЕ",
+        "CATEGORY", "КАТЕГОРИЯ",
+        "QUANTITY", "КОЛИЧЕСТВО",
+        "UNIT", "ЕДИНИЦА",
+        ">G<", ">Г<",
+        ">KG<", ">КГ<",
+        "<option type=\"mass\" value=\"oz\">OZ</option>", "",
+        "<option type=\"mass\" value=\"lb\">LB</option>", "",
+        ">ML<", ">МЛ<",
+        ">L<", ">Л<",
+        "<option type=\"volume\" value=\"tsp\">TSP</option>", "",
+        "<option type=\"volume\" value=\"tbsp\">TBSP</option>", "",
+        "<option type=\"volume\" value=\"ozfl\">OZ. FL</option>", "",
+        "<option type=\"volume\" value=\"cup\">CUP</option>", "",
+        "<option type=\"volume\" value=\"pt\">PT</option>", "",
+        "<option type=\"volume\" value=\"qt\">QT</option>", "",
+        "<option type=\"volume\" value=\"gal\">GAL</option>", "",
+        ">MM<", ">ММ<",
+        ">CM<", ">СМ<",
+        ">M<", ">М<",
+        "<option type=\"length\" value=\"in\">IN</option>", "",
+        "<option type=\"length\" value=\"ft\">FT</option>", "",
+        "BOTTLE SIZE", "РАЗМЕР БУТЫЛКИ",
+        "CREATE", "СОЗДАТЬ",
+        "<option value=\"tsp\">TSP</option>", "",
+        "<option value=\"tbsp\">TBSP</option>", "",
+        "<option value=\"ozfl\">OZ. FL</option>", "",
+        "<option value=\"cup\">CUP</option>", "",
+        "<option value=\"pt\">PT</option>", "",
+        "<option value=\"qt\">QT</option>", "",
+        "<option value=\"gal\">GAL</option>", ""
+    ];
+    
+    let mut i = 0;
+    while i < changes.len() {
+        contents = contents.replace(changes[i], changes[i+1]);
+        i += 2;
+    }
 
     match write_file(file, contents) {
         Err(e) => panic!(e),
