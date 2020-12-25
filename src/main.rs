@@ -27,6 +27,9 @@ fn main() {
 
     file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/newTransaction.ejs");
     new_transaction_ejs(&file_location);
+
+    file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/orderDetails.ejs");
+    order_details_ejs(&file_location);
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {
@@ -279,6 +282,32 @@ fn new_transaction_ejs(file: &str) {
     let changes = [
         "NEW TRANSACTION", "НОВАЯ ТРАНЗАКЦИЯ",
         "CREATE", "СОЗДАТЬ"
+    ];
+
+    let mut i = 0;
+    while i < changes.len() {
+        contents = contents.replace(changes[i], changes[i+1]);
+        i += 2;
+    }
+
+    match write_file(file, contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
+}
+
+fn order_details_ejs(file: &str){
+    let mut contents = match read_file(file) {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+
+    // TODO: check on total/grand total translations
+    let changes = [
+        "GRAND TOTAL", "ОБЩИЙ ИТОГ",
+        "TOTAL", "ИТОГ",
+        "TAXES", "НАЛОГИ",
+        "FEES", "ТАРИФЫ"
     ];
 
     let mut i = 0;
