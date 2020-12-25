@@ -21,6 +21,9 @@ fn main() {
 
     file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/newOrder.ejs");
     new_order_ejs(&file_location);
+
+    file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/newRecipe.ejs");
+    new_recipe_ejs(&file_location);
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {
@@ -228,6 +231,34 @@ fn new_order_ejs(file: &str) {
         i += 2;
     }
 
+    match write_file(file, contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
+}
+
+fn new_recipe_ejs(file: &str) {
+    let mut contents = match read_file(file) {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+
+    // TODO: need translation for spreadsheet option
+    let changes = [
+        "NEW RECIPE", "НОВЫЙ РЕЦЕПТ",
+        "NAME", "НАЗВАНИЕ",
+        "# OF INGREDIENTS", "№ ИНГРЕДИЕНТОВ",
+        "INGREDIENTS", "ИНГРЕДИЕНТОВ",
+        "INGREDIENT", "ИНГРЕДИЕНТ",
+        "QUANTITY", "КОЛИЧЕСТВО",
+        "CREATE", "СОЗДАТЬ"
+    ];
+
+    let mut i = 0;
+    while i < changes.len() {
+        contents = contents.replace(changes[i], changes[i+1]);
+        i += 2;
+    }
 
     match write_file(file, contents) {
         Err(e) => panic!(e),
