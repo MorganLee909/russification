@@ -18,6 +18,9 @@ fn main() {
 
     file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/newIngredient.ejs");
     new_ingredient_ejs(&file_location);
+
+    file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/newOrder.ejs");
+    new_order_ejs(&file_location);
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {
@@ -149,6 +152,43 @@ fn new_ingredient_ejs(file: &str) {
     contents = contents.replace("BOTTLE SIZE", "РАЗМЕР БУТЫЛКИ");
     contents = contents.replace("BOTTLE", "БУТЫЛКА");
     contents = contents.replace("CREATE", "СОЗДАТЬ");
+    contents = contents.replace("<option value=\"tsp\">TSP</option>", "");
+    contents = contents.replace("<option value=\"tbsp\">TBSP</option>", "");
+    contents = contents.replace("<option value=\"ozfl\">OZ. FL</option>", "");
+    contents = contents.replace("<option value=\"cup\">CUP</option>", "");
+    contents = contents.replace("<option value=\"pt\">PT</option>", "");
+    contents = contents.replace("<option value=\"qt\">QT</option>", "");
+    contents = contents.replace("<option value=\"gal\">GAL</option>", "");
+
+    match write_file(file, contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
+}
+
+fn new_order_ejs(file: &str) {
+    let mut contents = match read_file(file) {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+
+    // TODO: need translation for name/id
+    //       need translation for spreadsheet option
+    let changes = [
+        "INGREDIENTS", "ИНГРЕДИЕНТЫ",
+        "NEW ORDER", "НОВЫЙ ЗАКАЗ",
+        "TAXES", "НАЛОГИ",
+        "OTHER FEES", "ТАРИФЫ",
+        "CREATE", "СОЗДАТЬ",
+        "REMOVE", "УДАЛИТЬ"
+    ];
+
+    let mut i = 0;
+    while i < changes.len() {
+        contents = contents.replace(changes[i], changes[i+1]);
+        i += 2;
+    }
+
 
     match write_file(file, contents) {
         Err(e) => panic!(e),
