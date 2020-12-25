@@ -24,6 +24,9 @@ fn main() {
 
     file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/newRecipe.ejs");
     new_recipe_ejs(&file_location);
+
+    file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/newTransaction.ejs");
+    new_transaction_ejs(&file_location);
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {
@@ -251,6 +254,30 @@ fn new_recipe_ejs(file: &str) {
         "INGREDIENTS", "ИНГРЕДИЕНТОВ",
         "INGREDIENT", "ИНГРЕДИЕНТ",
         "QUANTITY", "КОЛИЧЕСТВО",
+        "CREATE", "СОЗДАТЬ"
+    ];
+
+    let mut i = 0;
+    while i < changes.len() {
+        contents = contents.replace(changes[i], changes[i+1]);
+        i += 2;
+    }
+
+    match write_file(file, contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
+}
+
+fn new_transaction_ejs(file: &str) {
+    let mut contents = match read_file(file) {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+
+    // TODO: need translation for spreadhseet option
+    let changes = [
+        "NEW TRANSACTION", "НОВАЯ ТРАНЗАКЦИЯ",
         "CREATE", "СОЗДАТЬ"
     ];
 
