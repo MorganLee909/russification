@@ -6,6 +6,9 @@ fn main() {
 
     let mut file_location: &str = format!("{}{}", folder_location, "/views/dashboardPage/dashboard.ejs");
     dashboard_ejs(file_location);
+
+    file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/editIngredient.ejs");
+    edit_ingredient_ejs(file_location);
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {
@@ -50,4 +53,21 @@ fn dashboard_ejs(file: &str) {
         Err(e) => panic!(e),
         _ => ()
     };
+}
+
+fn edit_ingredient_ejs(file: &str) {
+    let mut contents = match read_file(file) {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+
+    contents = contents.replace("NAME", "НАЗВАНИЕ");
+    contents = contents.replace("CATEGORY", "КАТЕГОРИЯ");
+    contents = contents.replace("MEASUREMENT UNIT", "ЕДИНИЦА ИЗМЕРЕНИЯ");
+    contents = contents.replace("SUBMIT", "РАЗМЕСТИТЬ");
+
+    match write_file(file, contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    }
 }
