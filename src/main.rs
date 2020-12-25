@@ -12,6 +12,9 @@ fn main() {
 
     file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/editRecipe.ejs");
     edit_recipe_ejs(file_location);
+
+    file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/ingredientDetails.ejs");
+    ingredient_details_ejs(file_location);
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {
@@ -86,6 +89,22 @@ fn edit_recipe_ejs(file: &str) {
     contents = contents.replace("PRICE", "ЦЕНА");
     contents = contents.replace("UPDATE", "ОБНОВИТЬ");
     contents = contents.replace("CANCEL", "ОТМЕНИТЬ");
+
+    match write_file(file, contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
+}
+
+fn ingredient_details_ejs(file: &str) {
+    let mut contents = match read_file(file) {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+
+    // TODO: translate "Average daily use"
+    contents = contents.replace("CURRENT STOCK", "ТЕКУЩИЙ ЗАПАС");
+    contents = contents.replace("RECIPES", "РЕЦЕПТЫ");
 
     match write_file(file, contents) {
         Err(e) => panic!(e),
