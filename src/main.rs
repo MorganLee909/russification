@@ -30,6 +30,9 @@ fn main() {
 
     file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/orderDetails.ejs");
     order_details_ejs(&file_location);
+
+    file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/orderFilter.ejs");
+    order_filter_ejs(&file_location);
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {
@@ -308,6 +311,31 @@ fn order_details_ejs(file: &str){
         "TOTAL", "ИТОГ",
         "TAXES", "НАЛОГИ",
         "FEES", "ТАРИФЫ"
+    ];
+
+    let mut i = 0;
+    while i < changes.len() {
+        contents = contents.replace(changes[i], changes[i+1]);
+        i += 2;
+    }
+
+    match write_file(file, contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
+}
+
+fn order_filter_ejs(file: &str) {
+    let mut contents = match read_file(file) {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+
+    let changes = [
+        "FILTER ORDERS", "ФИЛЬТРОВАТЬ ЗАКАЗЫ",
+        "Date Range", "ДИАПАЗОН ДАТ",
+        ">Ingredients", ">ИНГРЕДИЕНТЫ",
+        "SUBMIT", "РАЗМЕСТИТЬ"
     ];
 
     let mut i = 0;
