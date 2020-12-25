@@ -9,6 +9,9 @@ fn main() {
 
     file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/editIngredient.ejs");
     edit_ingredient_ejs(file_location);
+
+    file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/editRecipe.ejs");
+    edit_recipe_ejs(file_location);
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {
@@ -69,5 +72,23 @@ fn edit_ingredient_ejs(file: &str) {
     match write_file(file, contents) {
         Err(e) => panic!(e),
         _ => ()
-    }
+    };
+}
+
+fn edit_recipe_ejs(file: &str) {
+    let mut contents = match read_file(file) {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+
+    contents = contents.replace("NAME", "НАЗВАНИЕ");
+    contents = contents.replace("INGREDIENTS", "ИНГРЕДИЕНТЫ");
+    contents = contents.replace("PRICE", "ЦЕНА");
+    contents = contents.replace("UPDATE", "ОБНОВИТЬ");
+    contents = contents.replace("CANCEL", "ОТМЕНИТЬ");
+
+    match write_file(file, contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
 }
