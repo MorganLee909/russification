@@ -4,17 +4,20 @@ use std::io::prelude::*;
 fn main() {
     let folder_location: &str = "../../javascript/InventoryManagement";
 
-    let mut file_location: &str = format!("{}{}", folder_location, "/views/dashboardPage/dashboard.ejs");
-    dashboard_ejs(file_location);
+    let mut file_location: String = format!("{}{}", folder_location, "/views/dashboardPage/dashboard.ejs");
+    dashboard_ejs(&file_location);
 
     file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/editIngredient.ejs");
-    edit_ingredient_ejs(file_location);
+    edit_ingredient_ejs(&file_location);
 
     file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/editRecipe.ejs");
-    edit_recipe_ejs(file_location);
+    edit_recipe_ejs(&file_location);
 
     file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/ingredientDetails.ejs");
-    ingredient_details_ejs(file_location);
+    ingredient_details_ejs(&file_location);
+
+    file_location = format!("{}{}", folder_location, "/views/dashboardPage/sidebars/newIngredient.ejs");
+    new_ingredient_ejs(&file_location);
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {
@@ -61,7 +64,7 @@ fn dashboard_ejs(file: &str) {
     };
 }
 
-fn edit_ingredient_ejs(file: &str) {
+fn edit_ingredient_ejs(file: &String) {
     let mut contents = match read_file(file) {
         Ok(contents) => contents,
         Err(e) => panic!(e)
@@ -105,6 +108,47 @@ fn ingredient_details_ejs(file: &str) {
     // TODO: translate "Average daily use"
     contents = contents.replace("CURRENT STOCK", "ТЕКУЩИЙ ЗАПАС");
     contents = contents.replace("RECIPES", "РЕЦЕПТЫ");
+
+    match write_file(file, contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
+}
+
+fn new_ingredient_ejs(file: &str) {
+    let mut contents = match read_file(file) {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+    
+    // TODO: need good translation for "EACH"
+    // TODO: need transaction for spreadhseet upload link
+    contents = contents.replace("CREATE INGREDIENT", "СОЗДАТЬ ИНГРИДИЕНТ");
+    contents = contents.replace("NAME", "НАЗВАНИЕ");
+    contents = contents.replace("CATEGORY", "КАТЕГОРИЯ");
+    contents = contents.replace("QUANTITY", "КОЛИЧЕСТВО");
+    contents = contents.replace("UNIT", "ЕДИНИЦА");
+    contents = contents.replace(">G<", ">Г<");
+    contents = contents.replace(">KG<", ">КГ<");
+    contents = contents.replace("<option type=\"mass\" value=\"oz\">OZ</option>", "");
+    contents = contents.replace("<option type=\"mass\" value=\"lb\">LB</option>", "");
+    contents = contents.replace(">ML<", ">МЛ<");
+    contents = contents.replace(">L<", ">Л<");
+    contents = contents.replace("<option type=\"volume\" value=\"tsp\">TSP</option>", "");
+    contents = contents.replace("<option type=\"volume\" value=\"tbsp\">TBSP</option>", "");
+    contents = contents.replace("<option type=\"volume\" value=\"ozfl\">OZ. FL</option>", "");
+    contents = contents.replace("<option type=\"volume\" value=\"cup\">CUP</option>", "");
+    contents = contents.replace("<option type=\"volume\" value=\"pt\">PT</option>", "");
+    contents = contents.replace("<option type=\"volume\" value=\"qt\">QT</option>", "");
+    contents = contents.replace("<option type=\"volume\" value=\"gal\">GAL</option>", "");
+    contents = contents.replace(">MM<", ">ММ<");
+    contents = contents.replace(">CM<", ">СМ<");
+    contents = contents.replace(">M<", ">М<");
+    contents = contents.replace("<option type=\"length\" value=\"in\">IN</option>", "");
+    contents = contents.replace("<option type=\"length\" value=\"ft\">FT</option>", "");
+    contents = contents.replace("BOTTLE SIZE", "РАЗМЕР БУТЫЛКИ");
+    contents = contents.replace("BOTTLE", "БУТЫЛКА");
+    contents = contents.replace("CREATE", "СОЗДАТЬ");
 
     match write_file(file, contents) {
         Err(e) => panic!(e),
