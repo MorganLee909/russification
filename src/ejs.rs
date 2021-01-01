@@ -214,6 +214,7 @@ pub fn change<'b>() -> Vec<Change<'b>>{
         changes: vec![
             "FILTER TRANSACTIONS", "ФИЛЬТРОВАТЬ ТРАНЗАКЦИИ",
             "RECIPES", "РЕЦЕПТЫ",
+            "Date Range", "ДИАПАЗОН ДАТ",
             "SUBMIT", "РАЗМЕСТИТЬ"
         ]
     };

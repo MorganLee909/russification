@@ -27,7 +27,6 @@ fn main() {
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {
-    println!("{}", file);
     let mut file = File::open(file)?;
     let mut contents = String::new();
     file.read_to_string(&mut contents)?;
