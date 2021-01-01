@@ -1,9 +1,6 @@
-pub struct Change<'a> {
-    pub location: String,
-    pub changes: Vec<&'a str>
-}
+use crate::change::Change;
 
-pub fn change<'b>() -> Vec<Change<'b>>{
+pub fn change<'b>() -> Vec<Change<'b>> {
     let folder_location: &str = "../../javascript/InventoryManagement/";
 
     let menu_ejs = Change {

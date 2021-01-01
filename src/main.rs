@@ -2,26 +2,46 @@ use std::fs::File;
 use std::io::prelude::*;
 
 mod ejs;
-use ejs::Change;
+mod js;
+mod change;
 
 fn main() {
-    let files: Vec<Change> = ejs::change();
+    let ejs_files: Vec<change::Change> = ejs::change();
+    let js_files: Vec<change::Change> = js::change();
 
-    for i in 0..files.len() {
-        let mut contents = match read_file(&files[i].location) {
+    for i in 0..ejs_files.len() {
+        let mut contents = match read_file(&ejs_files[i].location) {
             Ok(contents) => contents,
             Err(e) => panic!(e)
         };
 
         let mut j = 0;
-        while j < files[i].changes.len() {
-            contents = contents.replace(files[i].changes[j], files[i].changes[j+1]);
+        while j < ejs_files[i].changes.len() {
+            contents = contents.replace(ejs_files[i].changes[j], ejs_files[i].changes[j+1]);
             j += 2;
         }
 
-        match write_file(&files[i].location, contents) {
+        match write_file(&ejs_files[i].location, contents) {
             Err(e) => panic!(e),
             _ => ()
+        };
+    }
+
+    for i in 0..js_files.len() {
+        let mut contents = match read_file(&js_files[i].location) {
+            Ok(contents) => contents,
+            Err(e) => panic!(e)
+        };
+
+        let mut j = 0;
+        while j < js_files[i].changes.len() {
+            contents = contents.replace(js_files[i].changes[j], js_files[i].changes[j+1]);
+            j += 2;
+        }
+
+        match write_file(&js_files[i].location, contents) {
+            Err(e) => panic!(e),
+            _ => println!("done")
         };
     }
 }
