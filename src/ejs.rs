@@ -194,6 +194,30 @@ pub fn change<'b>() -> Vec<Change<'b>>{
         ]
     };
 
+    let recipe_details_ejs = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/ejs/sidebars/recipeDetails.ejs"),
+        changes: vec![
+            "PRICE", "ЦЕНА"
+        ]
+    };
+
+    let transaction_details_ejs = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/ejs/sidebars/transactionDetails.ejs"),
+        changes: vec![
+            "RECIPES", "РЕЦЕПТЫ",
+            "TOTALS", "ИТОГИ"
+        ]
+    };
+
+    let transaction_filter_ejs = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/ejs/sidebars/transactionFilter.ejs"),
+        changes: vec![
+            "FILTER TRANSACTIONS", "ФИЛЬТРОВАТЬ ТРАНЗАКЦИИ",
+            "RECIPES", "РЕЦЕПТЫ",
+            "SUBMIT", "РАЗМЕСТИТЬ"
+        ]
+    };
+
     vec![
         menu_ejs,
         analytics_ejs,
@@ -210,6 +234,9 @@ pub fn change<'b>() -> Vec<Change<'b>>{
         new_recipe_ejs,
         new_transaction_ejs,
         order_details_ejs,
-        order_filter_ejs
+        order_filter_ejs,
+        recipe_details_ejs,
+        transaction_details_ejs,
+        transaction_filter_ejs
     ]
 }
