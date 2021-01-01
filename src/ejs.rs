@@ -6,6 +6,7 @@ pub fn change<'b>() -> Vec<Change<'b>> {
     let menu_ejs = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/ejs/menu.ejs"),
         changes: vec![
+            "THE SUBLINE", "SANO",
             "DASHBOARD", "ГЛАВНАЯ",
             "INGREDIENTS", "ИНГРЕДИЕНТЫ",
             "RECIPE BOOK", "КНИГА РЕЦЕПТОВ",
@@ -22,7 +23,8 @@ pub fn change<'b>() -> Vec<Change<'b>> {
             "SUBMIT", "РАЗМЕСТИТЬ",
             "ANALYTICS", "АНАЛИТИКА",
             "INGREDIENTS", "ИНГРЕДИЕНТЫ",
-            "RECIPES", "РЕЦЕПТЫ"
+            "RECIPES", "РЕЦЕПТЫ",
+            "Date Range", "ДИАПАЗОН ДАТ"
         ]
     };
 
@@ -40,7 +42,8 @@ pub fn change<'b>() -> Vec<Change<'b>> {
         location: format!("{}{}", folder_location, "views/dashboardPage/ejs/strands/ingredients.ejs"),
         changes: vec![
             "INGREDIENT INVENTORY", "ИНГРЕДИЕНТЫ",
-            "NEW", "НОВЫЙ"
+            "NEW", "НОВЫЙ",
+            "SEARCH", "ПОИСК"
         ]
     };
 
@@ -58,7 +61,8 @@ pub fn change<'b>() -> Vec<Change<'b>> {
         location: format!("{}{}", folder_location, "views/dashboardPage/ejs/strands/recipeBook.ejs"),
         changes: vec![
             "RECIPE BOOK", "КНИГА РЕЦЕПТОВ",
-            "NEW", "НОВЫЙ"
+            "NEW", "НОВЫЙ",
+            "SEARCH", "ПОИСК"
         ]
     };
 
@@ -96,7 +100,8 @@ pub fn change<'b>() -> Vec<Change<'b>> {
         location: format!("{}{}", folder_location, "views/dashboardPage/ejs/sidebars/ingredientDetails.ejs"),
         changes: vec![
             "CURRENT STOCK", "ТЕКУЩИЙ ЗАПАС",
-            "RECIPES", "РЕЦЕПТЫ"
+            "RECIPES", "РЕЦЕПТЫ",
+            "AVERAGE DAILY USE (30 DAYS)", "СРЕДНЕЕ ЕЖЕДНЕВНОЕ ИСПОЛЬЗОВАНИЕ (30 ДНЕЙ)"
         ]
     };
 
@@ -134,7 +139,8 @@ pub fn change<'b>() -> Vec<Change<'b>> {
             "<option value=\"cup\">CUP</option>", "",
             "<option value=\"pt\">PT</option>", "",
             "<option value=\"qt\">QT</option>", "",
-            "<option value=\"gal\">GAL</option>", ""
+            "<option value=\"gal\">GAL</option>", "",
+            "Or, upload a spreadsheet", "Или, загрузить электронную таблицу"
         ]
     };
 
@@ -146,7 +152,10 @@ pub fn change<'b>() -> Vec<Change<'b>> {
             "TAXES", "НАЛОГИ",
             "OTHER FEES", "ТАРИФЫ",
             "CREATE", "СОЗДАТЬ",
-            "REMOVE", "УДАЛИТЬ"
+            "REMOVE", "УДАЛИТЬ",
+            "DATE", "ДАТА",
+            "NAME/ID", "НАЗВАНИЕ",
+            "Or, upload a spreadsheet", "Или, загрузить электронную таблицу"
         ]
     };
 
@@ -159,7 +168,8 @@ pub fn change<'b>() -> Vec<Change<'b>> {
             "INGREDIENTS", "ИНГРЕДИЕНТОВ",
             "INGREDIENT", "ИНГРЕДИЕНТ",
             "QUANTITY", "КОЛИЧЕСТВО",
-            "CREATE", "СОЗДАТЬ"
+            "CREATE", "СОЗДАТЬ",
+            "Or, upload a spreadsheet", "Или, загрузить электронную таблицу"
         ]
     };
 
@@ -167,7 +177,8 @@ pub fn change<'b>() -> Vec<Change<'b>> {
         location: format!("{}{}", folder_location, "views/dashboardPage/ejs/sidebars/newTransaction.ejs"),
         changes: vec![
             "NEW TRANSACTION", "НОВАЯ ТРАНЗАКЦИЯ",
-            "CREATE", "СОЗДАТЬ"
+            "Create", "СОЗДАТЬ",
+            "Or, upload a spreadsheet", "Или, загрузить электронную таблицу"
         ]
     };
 
@@ -212,7 +223,16 @@ pub fn change<'b>() -> Vec<Change<'b>> {
             "FILTER TRANSACTIONS", "ФИЛЬТРОВАТЬ ТРАНЗАКЦИИ",
             "RECIPES", "РЕЦЕПТЫ",
             "Date Range", "ДИАПАЗОН ДАТ",
-            "SUBMIT", "РАЗМЕСТИТЬ"
+            "SUBMIT", "РАЗМЕСТИТЬ",
+            "Recipes", "Рецепты"
+        ]
+    };
+
+    let order_calculator_ejs = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/ejs/sidebars/orderCalculator.ejs"),
+        changes: vec![
+            "ORDER CALCULATOR", "КАЛЬКУЛЯТОР ЗАКАЗА",
+            "INGREDIENT", "ИНГРЕДИЕНТ"
         ]
     };
 
@@ -235,6 +255,7 @@ pub fn change<'b>() -> Vec<Change<'b>> {
         order_filter_ejs,
         recipe_details_ejs,
         transaction_details_ejs,
-        transaction_filter_ejs
+        transaction_filter_ejs,
+        order_calculator_ejs
     ]
 }

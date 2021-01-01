@@ -41,7 +41,7 @@ fn main() {
 
         match write_file(&js_files[i].location, contents) {
             Err(e) => panic!(e),
-            _ => println!("done")
+            _ => ()
         };
     }
 }
