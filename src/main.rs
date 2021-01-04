@@ -3,11 +3,15 @@ use std::io::prelude::*;
 
 mod ejs;
 mod js;
+mod classes;
+mod controllers;
 mod change;
 
 fn main() {
     let ejs_files: Vec<change::Change> = ejs::change();
     let js_files: Vec<change::Change> = js::change();
+    let class_files: Vec<change::Change> = classes::change();
+    let controller_files: Vec<change::Change> = controllers::change();
 
     for i in 0..ejs_files.len() {
         let mut contents = match read_file(&ejs_files[i].location) {
@@ -40,6 +44,42 @@ fn main() {
         }
 
         match write_file(&js_files[i].location, contents) {
+            Err(e) => panic!(e),
+            _ => ()
+        };
+    }
+
+    for i in 0..class_files.len() {
+        let mut contents = match read_file(&class_files[i].location) {
+            Ok(contents) => contents,
+            Err(e) => panic!(e)
+        };
+
+        let mut j = 0;
+        while j < class_files[i].changes.len() {
+            contents = contents.replace(class_files[i].changes[j], class_files[i].changes[j+1]);
+            j +=2;
+        }
+
+        match write_file(&class_files[i].location, contents) {
+            Err(e) => panic!(e),
+            _ => ()
+        };
+    }
+
+    for i in 0..controller_files.len() {
+        let mut contents = match read_file(&controller_files[i].location) {
+            Ok(contents) => contents,
+            Err(e) => panic!(e)
+        };
+
+        let mut j = 0;
+        while j < controller_files[i].changes.len() {
+            contents = contents.replace(controller_files[i].changes[j], controller_files[i].changes[j+1]);
+            j +=2;
+        }
+
+        match write_file(&controller_files[i].location, contents) {
             Err(e) => panic!(e),
             _ => ()
         };
