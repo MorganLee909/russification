@@ -85,7 +85,7 @@ fn main() {
         };
     }
 
-    //Full pages
+    //Full pages to overwrite
     let contents = match read_file("./landing.ejs") {
         Ok(contents) => contents,
         Err(e) => panic!(e)
@@ -118,6 +118,24 @@ fn main() {
         Err(e) => panic!(e)
     };
     match write_file("../../javascript/InventoryManagement/views/informationPages/help.ejs", contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
+
+    let contents = match read_file("./email.ejs") {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+    match write_file("../../javascript/InventoryManagement/views/passwordResetPages/email.ejs", contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
+
+    let contents = match read_file("./password.ejs") {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+    match write_file("../../javascript/InventoryManagement/views/passwordResetPages/password.ejs", contents) {
         Err(e) => panic!(e),
         _ => ()
     };
