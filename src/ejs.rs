@@ -24,7 +24,20 @@ pub fn change<'b>() -> Vec<Change<'b>> {
             "ANALYTICS", "АНАЛИТИКА",
             "INGREDIENTS", "ИНГРЕДИЕНТЫ",
             "RECIPES", "РЕЦЕПТЫ",
-            "Date Range", "ДИАПАЗОН ДАТ"
+            "Date Range", "ДИАПАЗОН ДАТ",
+            "MINIMUM DAILY USE", "МИНИМАЛЬНОЕ ЕЖЕДНЕВНОЕ ИСПОЛЬЗОВАНИЕ",
+            "AVERAGE DAILY USE", "СРЕДНЕЕ ЕЖЕДНЕВНОЕ ИСПОЛЬЗОВАНИЕ",
+            "MAXIMUM DAILY USE", "МАКСИМАЛЬНОЕ ЕЖЕДНЕВНОЕ ИСПОЛЬЗОВАНИЕ",
+            "Sunday Average", "в среднем воскресенья",
+            "Monday Average", "в среднем понидельника",
+            "Tuesday Average", "в среднем вторника",
+            "Wednesday Average", "в среднем среды",
+            "Thursday Average", "в среднем четверга",
+            "Friday Average", "в среднем пятницы",
+            "Saturday Average", "в среднем субботы",
+            "Average Daily Sales", "Среднесуточные продажи",
+            "Average Daily Revenue", "Средний дневной доход"
+
         ]
     };
 
@@ -53,7 +66,8 @@ pub fn change<'b>() -> Vec<Change<'b>> {
             "ORDERS", "ЗАКАЗЫ",
             "FILTER", "ФИЛЬТРОВАТЬ",
             "NEW", "НОВЫЙ",
-            "CALCULATOR", "КАЛЬКУЛЯТОР"
+            "CALCULATOR", "КАЛЬКУЛЯТОР",
+            "PREDICTOR", "ПРЕДИКТОР"
         ]
     };
 
@@ -239,8 +253,9 @@ pub fn change<'b>() -> Vec<Change<'b>> {
     let order_calculator_ejs = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/ejs/sidebars/orderCalculator.ejs"),
         changes: vec![
-            "ORDER CALCULATOR", "КАЛЬКУЛЯТОР ЗАКАЗА",
-            "INGREDIENT", "ИНГРЕДИЕНТ"
+            "ORDER PREDICTION", "ПРОГНОЗ ЗАКАЗА",
+            "Date Range", "ДИАПАЗОН ДАТ",
+            "PREDICT", "ПРОГНОЗ"
         ]
     };
 
