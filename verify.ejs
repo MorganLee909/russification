@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <title>SANO</title>
+        <link rel="icon" type="img/png" href="/shared/images/logo.png">
+        <link href="https://fonts.googleapis.com/css?family=Saira&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="/shared/shared.css">
+        <link rel="stylesheet" href="/verifyPage/verify.css">
+    </head>
+    <body>
+        <div class="header">
+            <a class="headerStart" href="/" >
+                <img src="/shared/images/logo.png" alt="Subline">
+                <div class='headerLogo'>SANO</div>
+            </a>
+        
+            <div class="headerEnd">
+                <a id="helpLink" class="headerHide" href="/help">ПОМОЩЬ</a>
+        
+                <!-- <a id="privacyPolicyLink" class="headerHide" href="/privacy">PRIVACY POLICY</a>
+        
+                <a id="termsLink" class="headerHide" href="/terms">TERMS AND CONDITIONS</a> -->
+            </div>
+        </div>
+
+        <% if(banner !== undefined){ %>
+            <% include ../shared/banner.ejs %>
+        <% } %>
+
+        <h1 class="title">письмо было отправлено на <%=email%>.  Используйте ссылку в письме, чтобы подтвердить свою учетную запись</h1>
+
+        <p class="text">Если вы не получили электронное письмо или вам нужно изменить свой адрес электронной почты, введите его ниже и нажмите «Отправить».</p>
+
+        <form class="form" action="/verify/resend" method="post">
+            <input class="email" name="email" type="email" required>
+
+            <input name="id" type="hidden" value="<%=id%>">
+
+            <input class="button" type="submit" value="РАЗМЕСТИТЬ">
+        </form>
+    </body>
+    
+    <script>
+        setTimeout(()=>{
+            let banner = document.getElementById("banner");
+            if(banner !== null) banner.style.display = "none";
+        }, 10000);
+    </script>
+</html>

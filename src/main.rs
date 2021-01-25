@@ -148,6 +148,15 @@ fn main() {
         Err(e) => panic!(e),
         _ => ()
     };
+
+    let contents = match read_file("./verify.ejs") {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+    match write_file("../../javascript/InventoryManagement/views/verifyPage/verify.ejs", contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {
