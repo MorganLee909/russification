@@ -1,7 +1,7 @@
 use crate::change::Change;
 
 pub fn change<'a>() -> Vec<Change<'a>> {
-    let folder_location = "../../javascript/InventoryManagement/";
+    let folder_location = "../InventoryManagement/";
 
     let helper_js = Change {
         location: format!("{}{}", folder_location, "controllers/helper.js"),

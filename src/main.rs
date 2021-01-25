@@ -90,7 +90,7 @@ fn main() {
         Ok(contents) => contents,
         Err(e) => panic!(e)
     };
-    match write_file("../../javascript/InventoryManagement/views/otherPages/landing.ejs", contents) {
+    match write_file("../InventoryManagement/views/otherPages/landing.ejs", contents) {
         Err(e) => panic!(e),
         _ => ()
     };
@@ -99,7 +99,7 @@ fn main() {
         Ok(contents) => contents,
         Err(e) => panic!(e)
     };
-    match write_file("../../javascript/InventoryManagement/views/otherPages/login.ejs", contents) {
+    match write_file("../InventoryManagement/views/otherPages/login.ejs", contents) {
         Err(e) => panic!(e),
         _ => ()
     };
@@ -108,7 +108,7 @@ fn main() {
         Ok(contents) => contents,
         Err(e) => panic!(e)
     };
-    match write_file("../../javascript/InventoryManagement/views/otherPages/register.ejs", contents) {
+    match write_file("../InventoryManagement/views/otherPages/register.ejs", contents) {
         Err(e) => panic!(e),
         _ => ()
     };
@@ -117,7 +117,7 @@ fn main() {
         Ok(contents) => contents,
         Err(e) => panic!(e)
     };
-    match write_file("../../javascript/InventoryManagement/views/informationPages/help.ejs", contents) {
+    match write_file("../InventoryManagement/views/informationPages/help.ejs", contents) {
         Err(e) => panic!(e),
         _ => ()
     };
@@ -126,7 +126,7 @@ fn main() {
         Ok(contents) => contents,
         Err(e) => panic!(e)
     };
-    match write_file("../../javascript/InventoryManagement/views/passwordResetPages/email.ejs", contents) {
+    match write_file("../InventoryManagement/views/passwordResetPages/email.ejs", contents) {
         Err(e) => panic!(e),
         _ => ()
     };
@@ -135,7 +135,7 @@ fn main() {
         Ok(contents) => contents,
         Err(e) => panic!(e)
     };
-    match write_file("../../javascript/InventoryManagement/views/passwordResetPages/password.ejs", contents) {
+    match write_file("../InventoryManagement/views/passwordResetPages/password.ejs", contents) {
         Err(e) => panic!(e),
         _ => ()
     };
@@ -144,7 +144,7 @@ fn main() {
         Ok(contents) => contents,
         Err(e) => panic!(e)
     };
-    match write_file("../../javascript/InventoryManagement/views/shared/footer.ejs", contents) {
+    match write_file("../InventoryManagement/views/shared/footer.ejs", contents) {
         Err(e) => panic!(e),
         _ => ()
     };
@@ -153,7 +153,7 @@ fn main() {
         Ok(contents) => contents,
         Err(e) => panic!(e)
     };
-    match write_file("../../javascript/InventoryManagement/views/verifyPage/verify.ejs", contents) {
+    match write_file("../InventoryManagement/views/verifyPage/verify.ejs", contents) {
         Err(e) => panic!(e),
         _ => ()
     };

@@ -1,7 +1,7 @@
 use crate::change::Change;
 
 pub fn change<'b>() -> Vec<Change<'b>> {
-    let folder_location: &str = "../../javascript/InventoryManagement/";
+    let folder_location: &str = "../InventoryManagement/";
 
     let menu_ejs = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/ejs/menu.ejs"),

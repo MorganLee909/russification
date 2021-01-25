@@ -1,7 +1,7 @@
 use crate::change::Change;
 
 pub fn change<'a>() -> Vec<Change<'a>> {
-    let folder_location: &str = "../../javascript/InventoryManagement/";
+    let folder_location: &str = "../InventoryManagement/";
 
     let merchant_js = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/classes/Merchant.js"),
