@@ -112,6 +112,15 @@ fn main() {
         Err(e) => panic!(e),
         _ => ()
     };
+
+    let contents = match read_file("./help.ejs") {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+    match write_file("../../javascript/InventoryManagement/views/informationPages/help.ejs", contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {

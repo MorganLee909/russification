@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport"/>
+        <title>SANO</title>
+        <link rel="icon" type="img/png" href="/shared/images/logo.png">
+        <link rel="stylesheet" href="/shared/shared.css">
+        <link rel="stylesheet" href="/informationPages/information.css">
+        <link href="https://fonts.googleapis.com/css?family=Saira&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header">
+            <a class="headerStart" href="/" >
+                <!-- <img src="/shared/images/logo.png" alt="Sano"> -->
+                <div class='headerLogo'>SANO</div>
+            </a>
+        
+            <div class="headerEnd">
+                <a id="helpLink" class="headerHide" href="/help">ПОМОЩЬ</a>
+        
+                <!-- <a id="privacyPolicyLink" class="headerHide" href="/privacy">PRIVACY POLICY</a> -->
+        
+                <!-- <a id="termsLink" class="headerHide" href="/terms">TERMS AND CONDITIONS</a> -->
+            </div>
+        </div>
+
+        <div class="helpMenu">
+            <ul>
+                <li><a href="#gettingStarted">Начиная</a></li>
+                <li><a href="#menu">Меню</a></li>
+                <li><a href="#dashboard">Главная</a></li>
+                <li><a href="#ingredients">Ингредиеты</a>
+                    <ul class="indent">
+                        <li><a href="#ingredientsDetails">Детали ингредиента</a></li>
+                        <li><a href="#ingredientsNew">Новые ингредиеты</a>
+                            <ul class="indent">
+                                <li><a href="#ingredientsNewBottles">Бутылка</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#recipeBook">Книга рецептов</a>
+                    <ul class="indent">
+                        <li><a href="#recipeBookDetails">Детали рецептов</a></li>
+                        <li><a href="#recipeBookNew">Новые рецепты</a></li>
+                    </ul>
+                </li>
+                <li><a href="#analytics">Аналитика</a>
+                    <ul class="indent">
+                        <li><a href="#analyticsIngredients">Аналитика ингредиентов</a></li>
+                        <li><a href="#analyticsRecipes">Аналитика рецептов</a></li>
+                    </ul>
+                </li>
+                <li><a href="#orders">Заказы</a>
+                    <ul class="indent">
+                        <li><a href="#ordersDetails">Детали заказа</a></li>
+                        <li><a href="#ordersNew">Новые заказы</a></li>
+                    </ul>
+                </li>
+                <li><a href="#transactions">Транзакции</a>
+                    <ul class="indent">
+                        <li><a href="#transactionsDetails">Детали транзакций</a></li>
+                        <li><a href="#transactionsNew">Новые Транзакции</a></li>
+                    </ul>
+                </li>
+                <li><a href="#spreadsheets">Uploading Spreadsheets</a>
+                    <ul class="indent">
+                        <li><a href="#ingredientsSpreadsheet">Ingredients Spreadsheet</a></li>
+                        <li><a href="#recipesSpreadsheet">Recipes Spreadsheet</a></li>
+                        <li><a href="#orderSpreadsheet">Order Spreadsheet</a></li>
+                        <li><a href="#transactionSpreadsheet">Transaction Spreadsheet</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </div>
+
+        <div class="helpContent">
+            <h2 id="gettingStarted">GETTING STARTED</h2>
+
+            <p>The Subline is a web application that is designed for restaurants, bars and other similar businesses to aid in the management of their inventories and to help them to reduce waste.  We provide tracking of ingredients in real time based on purchases, sales and other data so that managers can spot waste in their organizations and eliminate it.</p>
+
+            <p>The application contains four primary objects to help track inventory: ingredients, recipes, orders and transactions.  Ingredients are all of the food/beverage and other items that your organization purchases and keeps in your inventory.  Recipes are the "menu items" that your organization sells.  Recipes are composed of different ingredients that are used to create that recipe.  Orders are your purchases of ingredients.  Whenever you buy products used in your recipe, you can create a new order and your ingredients will be appropriately updated.  Finally, transactions are sales of recipes.  transactions consist of recipes that you sell throughout the business day.  As with orders, when you create a new transaction, your ingredients will be automatically updated.</p>
+
+            <p>Finally, The Subline offers analytics on your ingredients and recipes.  This will help you too see how much you are selling, when you are selling it and other information.  This is to help you to better visualize your data to see where you may be wasting food and give you information on when and how much food to order in the future.  A more detailed explanation of all of this is located below.</p>
+            
+            <h2 id="menu">МЕНЮ</h2>
+            
+            <p>После входа в систему вы увидите меню в левой части экрана. Это меню поможет вам ориентироваться по сайту и просматривать ваш контент. Если вам покажется, что меню занимает слишком много места на экране, просто нажмите на три горизонтальные полоски в правом верхнем углу и оно уменьшится.</p>
+
+            <p>В меню есть семь различных опций, из которых вы можете выбрать. «ГЛАВНАЯ», «ИНГРЕДИЕНТЫ», «КНИГА РЕЦЕПТОВ», «АНАЛИТИКА», «ЗАКАЗЫ», «СДЕЛКИ» и «ВЫХОД». Первые шесть опций перенесут вас на соответствующие страницы веб-сайта (см. описание ниже). Последняя опция «ВЫЙТИ» позволит выйти из системы и вернет вас на главную страницу.</p>
+
+            <h2 id="dashboard">ГЛАВНАЯ</h2>
+
+            <p>Страница панели управления - это главная страница, которую вы увидите после входа в свою учетную запись. На странице есть несколько элементов, которые сразу же дадут вам самую важную информацию.</p>
+
+            <p>В левом верхнем углу страницы вы увидите общий доход за месяц. Этот доход рассчитывается от продаж рецептов с первого числа месяца до текущего дня. Под доходом вы можете увидеть сравнение с прошлым месяцем. Цифры в процентах указывают, больше или меньше ваш доход по сравнению с тем же периодом за прошлый месяц. Например, если сегодня 15 октября, это сравнение  периодов: 1 - 15 сентября и 1 - 15 октября.</p>
+
+            <p>Внизу слева находится «Проверка запасов». Здесь некоторые ингредиенты, которые рекомендуется проверить, чтобы убедиться, что ваш фактический запас соответствует расчетному запасу. Если вам нужно обновить какой-либо из них, вы можете ввести новое число и затем нажать «ОБНОВИТЬ» - ингредиенты будут обновлены автоматически.</p>
+
+            <p>In the bottom left is the "Inventory Check".  These are some ingredients that are recommend to be checked to ensure that your actual stock matches the estimated stock.  If you need to update any of them, then you can simply enter in the new number and then click "UPDATE" and the ingredients will automatically be updated</p>
+
+            <p>Последняя часть главной страницы - это самые популярные ингредиенты. Ни расположены в правом нижнем углу. Это простая диаграмма из пяти самых популярных ингредиентов, которые есть в вашем ресторане, а также сумма дохода.</p>
+
+            <h2 id="ingredients">НИГЕДИЕНТЫ</h2>
+            <p>На странице ингредиентов вы найдете всю информацию о каждом из ваших ингредиентов. По умолчанию ингредиенты отсортированы по категории. Если щелкнуть стрелку справа от категории, она развернется, и вы увидите все ингредиенты в этой категории и ваш запас каждого из них.</p>
+
+            <p>Слева вверху страницы находится фильтр. Здесь вы можете найти конкретные ингредиенты. Начните вводить название нужного вам продукта, и появится список игредиентов, соответствующих вашему запросу. Щелкните красный значок «X», чтобы очистить фильтр.</p>
+
+            <p>Справа вверху страницы находится опция «Сортировать». Если вы нажмете на неё, появится список с несколькими вариантами. Опция «Ингредиент» отобразит список всех ингредиентов алфавитном порядке. Параметр «Категория» отобразит список по категориям, который используется по умолчанию. Параметр «Единица измерения» классифицирует ваши ингредиенты на основе их единиц измерения, аналогично «Категории». Щелкните красный значок «X» в любое время, чтобы вернуться к значениям по умолчанию.</p>
+
+            <h3 id="ingredientsDetails">ДЕТАЛИ ИНГЕДИЕНТОВ</h3>
+            <p>Вы можете нажать на любой из ингредиентов, чтобы узнать о нём подробнее. После нажатия на ингредиент справа появится боковая панель. Вверху находится категория и название ингредиента. Далее следует текущий запас. Затем указывается среднее ежедневное использование ингредиента (в среднем) за последние 30 дней. И последнее - рецепты. Здесь указаны все ваши рецепты, содержащие этот ингредиент. Вы можете нажать на рецепты, чтобы получить дополнительную информацию об этом рецепте. Рецепты мы обсудим ниже.</p>
+
+            <p>В верхней части боковой панели находятся три значка. Стрелка слева закроет боковую панель. Из корзины справа ингредиент будет удален. Чтобы удалить ингредиент, его необходимо сначала удалить из всех рецептов, которые содержат этот ингредиент. Это обязательно. Значок карандаша в центре позволит вам редактировать ингредиенты. Вы можете обновить название, категорию и текущий запас текущего ингредиента. Также вы можете изменить единицу измерения. Если вы используете фунты, но решили перейти на метрическую систему, вы можете выбрать килограммы. Или наоборот. Нажмите «Сохранить», чтобы внести изменения, или «Отмена», чтобы отменить их.</p>
+
+            <h3 id="ingredientsNew">НОВЫЕ ИНРЕДИЕНТЫ</h3>
+            <p>В правом верхнем углу страницы ингредиентов есть кнопка  «НОВОЕ». При нажатии на нее справа откроется боковая панель, позволяющая добавить новый ингредиент. Чтобы это сделать, нужно заполнить четыре поля. «Название» ингредиента, «категория» (её можно использовать для группирования нового ингредиента вместе с другими похожими ингредиентами). Третье поле - это количество ингредиента, которое есть у вас на складе. Затем сопоставьте количество с единицей измерения в следующем поле. Выбирая единицу измерения, помните, что вы можете изменить её. Однако, вы можете взаимозаменять только единицы одного типа. Например, вы можете изменить баррель (масса) на килограм (масса), но вы не можете изменить баррель (масса) на галлон (объем).</p>
+
+            <h4 id="ingredientsNewBottles">БУТЫЛКА</h4>
+            <p>Одна из особых опций, которую можно выбрать, - это тип бутылки. Бутылки, очевидно, предназначены для жидкостей, продающихся в бутлыках (например, ликеры, вино), но, как правило, продаются небольшими порциями (например, шоты, бокалы). Если вы выберете вариант с бутылкой, появится другое поле с запросом объёма бутылки. Здесь вам нужно выбрать единицу измерения (объем) бутылки, а также количество бутылок. Единица измерения для бутылки может быть изменена. При создании рецептов, в состав которых входит содержимое бутылок, вы добавляете необходимый объем ингредиентов, и программа автоматически обновляет количество ингредиентов в бутылках.</p>
+
+            <h2 id="recipeBook">КНИГА РЕЦЕПТОВ»</h2>
+            <p>Третий пункт меню - «КНИГА РЕЦЕПТОВ». Здесь вы найдете всю необходимую информацию обо всех ваших рецептах. Рецепты отображаются отдельно с ценой рецепта.</p>
+
+            <p>Над рецептами слева находится опция фильтра. Он работает  аналогично фильтру ингредиентов. Если вы начнете вводить текст в этом поле, то список будет отфильтрован, чтобы отображать только те ингредиенты, которые соответствуют введенному вами запросу.</p>
+
+            <h3 id="recipeBookDetails">ДЕТАЛИ РЕЦЕПТА</h3>
+            <p>Если щелкнуть любой из ваших рецептов, справа откроется боковая панель, на которой будут отображаться все сведения о конкретном ингредиенте. В верхней части боковой панели указано название ингредиента. Ниже приведен список ингредиентов, содержащихся в рецепте. Далее указана цена рецепта.</p>
+
+            <p>Над названием рецепта есть три значка. Значок стрелки слева закроет боковую панель. Значок корзины справа удалит рецепт. Будьте внимательны, удаление рецепта невозможно отменить.</p>
+
+            <p>Значок карандаша в центре предназначен для редактирования рецепта. Если вы нажмете на него, вы сможете изменить название рецепта, добавить, удалить, отредактировать ингредиенты в рецепте и/или изменить цену. Чтобы изменить количество ингредиента в этом рецепте, измените число в поле справа от ингредиента. Чтобы добавить ингредиент в рецепт, щелкните значок «+». Появится список с ингредиентами, из которых вы можете выбрать. Выберите ингредиент, который хотите добавить, затем введите количество ингредиента в рецепте в поле справа. Чтобы удалить ингредиент из рецепта, нажмите на корзину справа от ингредиента. Это удалит  ингредиент только из конкретного рецепта, а не из вашего списка ингредиентов. По завершении нажмите кнопку «обновить», чтобы сохранить изменения.</p>
+
+            <h3 id="recipeBookNew">НОВЫЕ РЕЦЕПТЫ</h3>
+            <p>Нажмите кнопку «НОВЫЙ» в верхнем левом углу страницы книги рецептов, чтобы создать новый рецепт. Панель вверху содержит три поля: название, цена и количество ингредиентов. Сначала введите название и цену рецепта. В поле «Количество ингредиентов» введите количество ингредиентов, входящих в рецепт. Вы можете обновить их число в любое время. После этого вы должны увидеть соответствующее количество полей под «ИНГРЕДИЕНТАМИ». В каждом поле выберите ингредиент и количество этого ингредиента. Когда закончите, нажмите «СОЗДАТЬ» внизу, чтобы сохранить новый рецепт.</p>
+
+            <h2 id="analytics">АНАЛИТИКА</h2>
+            <p>На странице аналитики вы найдёте подробную информацию о ваших ингредиентах и рецептах. На этой странице хранится множество данных, которые вы можете изучить. По умолчанию сначала вы увидите ингредиенты.</p>
+
+            <p>В правом верхнем углу страницы можно выбрать две даты. Это позволит получить данные за любой период времени. Введите первый день в поле «От», последний - в поле «До». Затем нажмите «Отправить», чтобы получить данные. В зависимости от объема данных, обработка информации может занять до минуты. Обновление дат коснется как ингредиентов, так и рецептов. По умолчанию на странице отображаются данные за последние 30 дней, пока вы не выберете другой период времени.</p>
+
+            <h3 id="analyticsIngredients">АНАЛИТИКА ИНГРЕДИЕНТОВ</h3>
+            <p>Данные по ингредиентам отображаются при первом посещении страницы аналитики. На это указывает селектор в верхней центральной части страницы. Данные не отобразятся, пока вы не выберете ингредиент. Все ингредиенты перечислены в левой части страницы. Выберите один из них, чтобы посмотреть данные.</p>
+
+            <p>В самом большом поле вверху страницы отображается график для выбранного ингредиента. Он показывает количество проданного ингредиента за каждый день. Это интерактивный график, и вы можете увеличить, уменьшить масштаб и многое другое, чтобы нагляднее визуализировать ваши данные.</p>
+
+            <p>Строка под графиком содержит три разных показателя. «Минимальное ежедневное использование» отображает минимальное количество ингредиента, которое вы использовали в течение выбранного периода времени. «Среднее ежедневное использование» отображает среднее количество, которое используется каждый день в течение выбранного периода времени. «Максимальное ежедневное использование» будет отображать максимальное количество ингредиента, которое вы использовали за один день.</p>
+
+            <p>В нижней строке отображается среднее количество ингредиента, которое использовалось каждый день в течение выбранного периода времени.</p>
+
+            <h3 id="analyticsRecipes">АНАЛИТИКА РЕЦЕПТОВ</h3>
+            <p>Чтобы переключиться на аналитику рецептов, нажмите на часть селектора «Рецепты» вверху страницы. Изначально рецепты не отображаются по умолчанию. В левой части страницы вы увидите список ваших рецептов. Как только вы выберете один из них, вам будут показаны данные по этому рецепту.</p>
+
+            <p>Основная часть страницы - это график. Он отображает ежедневные продажи рецептов за выбранный период времени. Как и диаграмма ингредиентов, график интерактивен, и вы можете масштабировать его, чтобы данные стали нагляднее.</p>
+
+            <p>Внизу страницы данные разделены на две группы. Слева - среднесуточные продажи. Здесь отображается среднее количество продаж данного рецепта в день за выбранный период времени. Справа - средний дневной доход. Это средний доход в день от конкретного рецепта.</p>
+
+            <h2 id="orders">ЗАКАЗЫ</h2>
+            <p>Информация о заказах отображается на странице заказов. Здесь вы найдёте информацию о продаже ингредиентов, а также можете создать новые заказы при покупке дополнительных ингредиентов.</p>
+
+            <p>В центре страницы вы увидите список всех ваших заказов. Он отображает название или идентификатор заказа, количество приобретенных уникальных ингредиентов, дату и общую стоимость заказа. По умолчанию отображаются 100 последних заказов.</p>
+
+            <p>Над списком ваших заказов есть опция поиска. При нажатии на «Дату» откроется меню, в котором можно выбрать две даты для поиска. При нажатии на «Ингредиенты» откроется список ваших ингредиентов. Установите флажок рядом с каждым ингредиентом, чтобы найти заказы, содержащие эти ингредиенты. Если снять все флажки, будут получены заказы для выбранных вами дат. Нажмите «Отправить», чтобы получить заказы. В зависимости от количества заказов, которые необходимо получить, поиск может занять несколько секунд.</p>
+
+            <h3 id="ordersDetails">ДЕТАЛИ ЗАКАЗА</h3>
+            <p>При нажатии на любой конкретный заказ откроется боковая панель справа с подробной информацией о заказе. Вверху указано название/идентификатор заказа, за которым следует дата. Ниже будет список всех ингредиентов, купленных в этом порядке. В списке ингредиентов будет указано их название, закупленное количество, цена за единицу объема и общая цена этого ингредиента. Внизу отображается общая стоимость всех ингредиентов в этом заказе.</p>
+
+            <p>В верхней части боковой панели находятся два значка. Значок стрелки слева закроет боковую панель. Значок корзины справа удалит заказ. Будьте внимательны, удаление заказа невозможно отменить. Редактировать заказ невозможно. Если вы обнаружите, что допустили ошибку при вводе заказа, то вам придется удалить его и создать новый.</p>
+
+            <h3 id="ordersNew">НОВЫЕ ЗАКАЗЫ</h3>
+            <p>В правом верхнем углу страницы заказов находится кнопка «НОВЫЙ» для создания нового заказа. При нажатии на нее справа откроется боковая панель. В левой части этой панели находится список всех ваших ингредиентов. Справа - данные для заказа.</p>
+
+            <p>Чтобы создать новый заказ, начните с ввода названия / идентификатора заказа. В качестве названия может быть что угодно, это сделано для вашей справки и удобства поиска. Затем введите дату создания заказа.</p>
+
+            <p>Чтобы добавить ингредиенты в заказ, просмотрите список ингредиентов и щелкните любой, который был приобретен в этом заказе. Как только вы нажмете на ингредиент, он будет добавлен в заказ справа. В поле слева указано количество ингредиента, приобретенного в данном заказе. Слева указана цена за единицу ингредиента. Убедитесь, что вы вводите цену за единицу (т.е. $ / фунт или $ / галлон), а не общую цену ингредиента. Если вы случайно добавили ингредиент, не входящий в заказ, нажмите кнопку «удалить» в правом верхнем углу. Так ингредиент будет удалён из заказа.</p>
+
+            <p>Когда вы закончите добавлять все необходимые ингредиенты в заказ, нажмите кнопку «СОЗДАТЬ» в нижней части боковой панели. Появится новый заказ со всеми указанными ингредиентами. Когда появится новый заказ, запас всех ваших ингредиентов автоматически обновится. Если вы вернетесь на страницу рецепта, то увидите, что все ингредиенты в заказе были  обновлены соответственно изменениям.</p>
+
+            <h2 id="transactions">ТРАНЗАКЦИИ</h2>
+            <p>На странице транзакций вы найдёте все свои продажи. В центре находится список из 100 последних операций. Каждая транзакция отображает дату и/или время транзакции, общее количество проданных рецептов и доход.</p>
+
+            <p>Над списком транзакций находится панель поиска, аналогичная поиску на странице заказов. При нажатии на «Дату» откроется  список с двумя полями даты. Введите дату начала и дату окончания, чтобы найти свои заказы. При нажатии на «Рецепты» откроется список со всеми вашими рецептами. Установите флажок рядом с каждым рецептом, который вы хотите найти. При выборе рецепта будут найдены все транзакции, содержащие этот рецепт. Если вы не введёте никаких рецептов, то получите список всех транзакций за указанный срок. Нажмите «Отправить», чтобы получить выбранные вами транзакции. В зависимости от количества транзакций поиск может занять несколько секунд.</p>
+
+            <h3 id="transactionsDetails">ДЕТАЛИ ТРАНЗАКЦИЙ</h3>
+            <p>На странице транзакций нажатие на любую транзакцию откроет боковую панель с подробной информацией о конкретной транзакции. Вверху вы увидите дату и, возможно, время транзакции. Ниже будет список проданных рецептов. Каждый рецепт в этом списке будет содержать название, количество проданных рецептов, стоимость и общий доход в рамках одноц транзакции. Ниже будут указаны итоги транзакции. Т.е. общее количество проданных рецептов и общий доход от транзакции.</p>
+
+            <p>В верхней части боковой панели находятся два значка. Значок стрелки слева закроет боковую панель. Значок корзины справа удалит транзакцию. Будьте внимательны, удаление транзакции невозможно отменить. Редактирование транзакций недоступно. Если вы обнаружите, что допустили ошибку при создании транзакции, вам придется удалить её, а затем заново создать.</p>
+
+            <h3 id="transactionsNew">НОВЫЕ ТРАНЗАКЦИИ</h3>
+            <p>В правом верхнем углу страницы транзакций находится кнопка «Новая» для создания новых транзакций. При нажатии на эту кнопку справа откроется боковая панель.</p>
+
+            <p>Создать транзакцию довольно просто. Сначала выберите дату транзакции вверху. Ниже вы найдете список всех ваших рецептов. Для каждого рецепта введите номер в поле справа от названия рецепта. Для рецептов, которые не были проданы в транзакции, просто оставьте поле пустым. Поскольку нецелесообразно вводить данные по каждой проведенной операции, мы рекомендуем создавать одну транзакцию в день для всех проданных рецептов.</p>
+
+            <p>По завершении ввода всей информации нажмите кнопку «СОЗДАТЬ» в нижней части боковой панели. Это добавит новую транзакцию. Кроме того, все ваши ингредиенты будут автоматически обновляться в зависимости от количества проданных рецептов и количества каждого ингредиента в рецепте. Вы можете вернуться на страницу ингредиентов после создания новой транзакции и обнаружите, что количество  ингредиентов уже обновлено.</p>
+
+            <h2 id="spreadsheets">UPLOADING SPREADSHEETS</h2>
+            <p>In order to make the process of entering your data simpler, you have the option to use a spreadsheet to upload your data to the site.  This can be especially helpful if you need to create a large amount of data at once, such as for the initial uploading of ingredients or recipes.  The ability to upload data from a spreadsheet is available for ingredients, recipes, orders and transactions.  You will find a link to do this in the corresponding sidebar for creating new items, it should be located at the bottom of the sidebar.  Clicking on this link will open a window that will allow you to choose a file to submit, or you can download a template that can help you enter the data correctly.  All of the data must be carefully formatted, so it is recommended to use the template.  See below for instructions for each spreadsheet.</p>
+
+            <h3 id="ingredientsSpreadsheet">INGREDIENTS SPREADSHEET</h3>
+            <p>The first row of the ingredients spreadsheet is the header and must contain six column headers: name, category, quantity, unit, bottle, bottle size.  They may be in any order and capitalization does not matter.  From there, fill in the necessary data.  If the unit is a bottle, then enter TRUE in that column and the size of the bottle (based on the unit) in the "bottle size" column.  Otherwise leave these two columns blank.</p>
+
+            <h3 id="recipesSpreadsheet">RECIPES SPREADSHEET</h3>
+            <p>The first row of the recipes spreadsheet is the header and must contain four column headers: name, price, ingredients and ingredient amount.  The headers may be in any order and capitalization does not matter.  The name of the ingredient need only be filled in on the first row of the ingredient, then put each ingredient of the recipe in a seperate row, along with the quantity of that ingredient within the recipe.  It is recommended to download the template for an example.  If you download the template, then you will have all of your ingredients listed in column F, and their corresponding unit in column G.  Ingredient names must be entered exactly as they are listed (capitalization does not matter) in order to match them to your current ingredients.  You will be given an error telling you which ingredient failed to match if there is a mistake in the spreadsheet.  The ingredient amount is assumed to be in the same unit as the ingredient itself.</p>
+
+            <h3 id="orderSpreadsheet">ORDER SPREADSHEET</h3>
+            <p>It is strongly recommended that you download the template spreadsheet for orders.  This spreadsheet will contain seven headers: name, date, taxes, fees, ingredients, quantity and price.  Change the name(A2) to anything that you would like, such as the order id.  The date will be autofilled with the current date, but you may change it if you wish.  Be sure to enter the date in the same format (yyyy-mm-dd).  Taxes and fees are defaulted to 0, but may be changed.  The ingredients column contains a list of all of your ingredients, do not change anything in this column.  The quantity column(F) and the price column(G) are where you input the information for your order.  For any ingredients that you did not purchase in this particular order, you can lave it as 0.</p>
+
+            <p>NOTE: Price is price per measurement unit.  If the item is measured in lbs, then you need to enter the price per pound.</p>
+            <p>NOTE: Each spreadsheet may only contain a single order.  If you need to enter more than one order, then you must change the data and upload the file again.</p>
+
+            <h3 id="transactionSpreadsheet">TRANSACTION SPREADSHEET</h3>
+            <p>It is strongly recommended that you download the template spreadsheet for transactions.  This spreadsheet will contain three headers: date, recipes and quantity.  The date will be autofilled with the current date, but you may change it if you wish.  Be sure to enter the date in the same format (yyy-mm-dd). The recipes column(B) will contain a list of all of your recipes, do not change anything in this column.  The quantity column(C) are where you input the information for the transaction.  Simply enter a whole number for each recipe that was sold in the transaction.  Leave the 0 for any recipes that were not sold in the transaction.</p>
+
+            <p>NOTE: Each spreadsheet may only contain a single transaction.  If you need to enter more than on transaction, then you must change the data and upload the file again.</p>
+
+            <h2 id="contact">КОНТАКТЫ</h2>
+            <p>Если у вас возникли какие-либо проблемы с сайтом или вы не нашли ответа на свои вопросы здесь, пожалуйста, обратитесь к нам.</p>
+
+            <p>Наш сайт постоянно обновляется, чтобы предоставить  пользователям лучший сервис и соответсвовать их запросам и ожиданиям.</p>
+
+            <a href="mailto:morganlee909@gmail.com">MorganLee909@gmail.com</a>
+        </div>
+    </body>
+</html>
