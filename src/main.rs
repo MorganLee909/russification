@@ -84,6 +84,16 @@ fn main() {
             _ => ()
         };
     }
+
+    //Full pages
+    let contents = match read_file("./landing.ejs") {
+        Ok(contents) => contents,
+        Err(e) => panic!(e)
+    };
+    match write_file("../../javascript/InventoryManagement/views/otherPages/landing.ejs", contents) {
+        Err(e) => panic!(e),
+        _ => ()
+    };
 }
 
 fn read_file(file: &str) -> std::io::Result<String> {
