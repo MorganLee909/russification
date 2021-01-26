@@ -19,9 +19,8 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let email_verification_js = Change {
         location: format!("{}{}", folder_location, "controllers/emailVerification.js"),
         changes: vec![
-            "MG_SUBLINE_APIKEY", "MG_PERSONAL_APIKEY",
-            "mail.thesubline.net", "mg.sanoinventarium.com",
-            "<clientsupport@thesubline.net>", "<no-reply@sanoinventarium.com>",
+            "{apiKey: process.env.MG_SUBLINE_APIKEY, domain: \"mail.thesubline.net\"}", "{apiKey: process.env.MG_PERSONAL_APIKEY, domain: \"mg.sanoinventarium.com\", host: \"api.eu.mailgun.net\"}",
+            "The Subline <clientsupport@thesubline.net>", "Sano Inventarium <no-reply@sanoinventarium.com>",
             "clientsupport@mail.thesubline.com", "no-reply@mg.sanoinventarium.com"
         ]
     };
@@ -29,9 +28,8 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let password_reset_js = Change {
         location: format!("{}{}", folder_location, "controllers/passwordReset.js"),
         changes: vec![
-            "MG_SUBLINE_APIKEY", "MG_PERSONAL_APIKEY",
-            "mail.thesubline.net", "mg.sanoinventarium.com",
-            "<clientsupport@thesubline.net>", "<no-reply@sanoinventarium.com>"
+            "{apiKey: process.env.MG_SUBLINE_APIKEY, domain: \"mail.thesubline.net\"}", "{apiKey: process.env.MG_PERSONAL_APIKEY, domain: \"mg.sanoinventarium.com\", host: \"api.eu.mailgun.net\"}",
+            "The Subline <clientsupport@thesubline.net>", "Sano Inventarium <no-reply@sanoinventarium.com>"
         ]
     };
 
