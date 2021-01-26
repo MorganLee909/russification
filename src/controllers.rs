@@ -35,9 +35,17 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         ]
     };
 
+    let app_js = Change {
+        location: format!("{}{}", folder_location, "app.js"),
+        changes: vec![
+            "www.thesubline.com", "www.sanoinventarium.com"
+        ]
+    };
+
     vec![
         helper_js,
         email_verification_js,
-        password_reset_js
+        password_reset_js,
+        app_js
     ]
 }
