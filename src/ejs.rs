@@ -6,6 +6,8 @@ pub fn change<'b>() -> Vec<Change<'b>> {
     let menu_ejs = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/ejs/menu.ejs"),
         changes: vec![
+            "<img class=\"menuLogo\" src=\"/shared/images/logo.png\" alt=\"The Subline\">", "",
+            "<img class=\"menuLogoMin\" src=\"/shared/images/logo.png\" alt=\"The Subline\">", "",
             "THE SUBLINE", "SANO",
             "DASHBOARD", "ГЛАВНАЯ",
             "INGREDIENTS", "ИНГРЕДИЕНТЫ",
