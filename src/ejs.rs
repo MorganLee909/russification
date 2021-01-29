@@ -179,7 +179,9 @@ pub fn change<'b>() -> Vec<Change<'b>> {
             "REMOVE", "УДАЛИТЬ",
             "DATE", "ДАТА",
             "NAME/ID", "НАЗВАНИЕ",
-            "Or, upload a spreadsheet", "Или, загрузить электронную таблицу"
+            "Or, upload a spreadsheet", "Или, загрузить электронную таблицу",
+            "QUANTITY", "КОЛИЧЕСТВО",
+            "PRICE PER UNIT($)", "ЦЕНА ЗА ЕДИНИЦУ"
         ]
     };
 

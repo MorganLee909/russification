@@ -10,15 +10,39 @@ pub fn change<'a>() -> Vec<Change<'a>> {
             "REVENUE", "ДОХОД",
             "\"DATE\"", "\"ДАТА\"",
             "MOST POPULAR INGREDIENTS", "САМЫЕ ПОПУЛЯРНЫЕ ИНГРЕДИЕНТЫ",
-            "QUANTITY", "КОЛИЧЕСТВО"
+            "QUANTITY", "КОЛИЧЕСТВО",
+            "$$", "₽$",
+            "title: \"$\"", "title: \"₽\""
         ]
     };
 
-    let analytics_ejs = Change {
+    let recipe_book_js = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/js/strands/recipeBook.js"),
+        changes: vec![
+            "$$", "₽$"
+        ]
+    };
+
+    let analytics_js = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/strands/analytics.js"),
         changes: vec![
             "QUANTITY", "КОЛИЧЕСТВО",
             "\"DATE\"", "\"ДАТА\"",
+            "$$", "₽$"
+        ]
+    };
+
+    let orders_js = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/js/strands/orders.js"),
+        changes: vec![
+            "$$", "₽$"
+        ]
+    };
+
+    let transactions_js = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/js/strands/transactions.js"),
+        changes: vec![
+            "$$", "₽$"
         ]
     };
 
@@ -51,14 +75,34 @@ pub fn change<'a>() -> Vec<Change<'a>> {
             "Thursday", "четверг",
             "Friday", "пятница",
             "Saturday", "суббота",
-            "recipes`", "рецептов`"
+            "recipes`", "рецептов`",
+            "$$", "₽$"
+        ]
+    };
+
+    let order_details_js = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/js/sidebars/orderDetails.js"),
+        changes: vec![
+            "$$", "₽$"
+        ]
+    };
+
+    let recipe_details_js = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/js/sidebars/recipeDetails.js"),
+        changes: vec![
+            "$$", "₽$"
         ]
     };
 
     vec![
         home_js,
-        analytics_ejs,
+        recipe_book_js,
+        analytics_js,
+        orders_js,
+        transactions_js,
         new_recipe_js,
-        transaction_details_js
+        transaction_details_js,
+        order_details_js,
+        recipe_details_js
     ]
 }
