@@ -3,12 +3,20 @@ use crate::change::Change;
 pub fn change<'b>() -> Vec<Change<'b>> {
     let folder_location: &str = "../InventoryManagement/";
 
+    let dashboard_ejs = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/dashboard.ejs"),
+        changes: vec![
+            "The Subline", "ONcontrol",
+            "logo.png", "favicon.png"
+        ]
+    };
+
     let menu_ejs = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/ejs/menu.ejs"),
         changes: vec![
-            "<img class=\"menuLogo\" src=\"/shared/images/logo.png\" alt=\"The Subline\">", "",
-            "<img class=\"menuLogoMin\" src=\"/shared/images/logo.png\" alt=\"The Subline\">", "",
-            "THE SUBLINE", "SANO",
+            "<img class=\"menuLogo\" src=\"/shared/images/logo.png\" alt=\"The Subline\">", "<img class=\"menuLogo\" src=\"/shared/images/oneLineLogo.png\" alt=\"on control\">",
+            "<img class=\"menuLogoMin\" src=\"/shared/images/logo.png\" alt=\"The Subline\">", "<img class=\"menuLogoMin\" src=\"/shared/images/vectorLogo.png\" alt=\"on control\">",
+            "<p>THE SUBLINE</p>", "",
             "DASHBOARD", "ГЛАВНАЯ",
             "INGREDIENTS", "ИНГРЕДИЕНТЫ",
             "RECIPE BOOK", "КНИГА РЕЦЕПТОВ",
@@ -264,6 +272,7 @@ pub fn change<'b>() -> Vec<Change<'b>> {
     };
 
     vec![
+        dashboard_ejs,
         menu_ejs,
         analytics_ejs,
         home_ejs,

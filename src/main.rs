@@ -6,6 +6,7 @@ mod ejs;
 mod js;
 mod classes;
 mod controllers;
+mod css;
 mod change;
 
 fn main() {
@@ -13,6 +14,7 @@ fn main() {
     let js_files: Vec<change::Change> = js::change();
     let class_files: Vec<change::Change> = classes::change();
     let controller_files: Vec<change::Change> = controllers::change();
+    let css_files: Vec<change::Change> = css::change();
 
     for i in 0..ejs_files.len() {
         let mut contents = match read_file(&ejs_files[i].location) {
@@ -60,7 +62,7 @@ fn main() {
         while j < class_files[i].changes.len() {
             contents = contents.replace(class_files[i].changes[j], class_files[i].changes[j+1]);
             j +=2;
-        }
+        };
 
         match write_file(&class_files[i].location, contents) {
             Err(e) => panic!(e),
@@ -78,9 +80,27 @@ fn main() {
         while j < controller_files[i].changes.len() {
             contents = contents.replace(controller_files[i].changes[j], controller_files[i].changes[j+1]);
             j +=2;
-        }
+        };
 
         match write_file(&controller_files[i].location, contents) {
+            Err(e) => panic!(e),
+            _ => ()
+        };
+    }
+
+    for i in 0..css_files.len() {
+        let mut contents = match read_file(&css_files[i].location) {
+            Ok(contents) => contents,
+            Err(e) => panic!(e)
+        };
+
+        let mut j = 0;
+        while j < css_files[i].changes.len() {
+            contents = contents.replace(css_files[i].changes[j], css_files[i].changes[j+1]);
+            j += 2;
+        };
+
+        match write_file(&css_files[i].location, contents) {
             Err(e) => panic!(e),
             _ => ()
         };
@@ -163,6 +183,7 @@ fn main() {
     std::fs::copy("./images/oneLineLogo.png", "../InventoryManagement/views/shared/images/oneLineLogo.png").unwrap();
     std::fs::copy("./images/twoLineLogo.png", "../InventoryManagement/views/shared/images/twoLineLogo.png").unwrap();
     std::fs::copy("./images/favicon.png", "../InventoryManagement/views/shared/images/favicon.png").unwrap();
+    std::fs::copy("./images/vectorLogo.png", "../InventoryManagement/views/shared/images/vectorLogo.png").unwrap();
 
     //Replace on all pages
     // fn is_hidden(entry: &DirEntry) -> bool {
