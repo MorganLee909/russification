@@ -83,7 +83,13 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let order_details_js = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/sidebars/orderDetails.js"),
         changes: vec![
-            "$$", "₽$"
+            "$$", "₽$",
+            "order.taxes.toFixed(2)", "order.taxes",
+            "order.fees.toFixed(2)", "order.fees",
+            "order.ingredients[i].cost().toFixed(2)", "order.ingredients[i].cost()",
+            "order.ingredients[i].pricePerUnit.toFixed(2)", "order.ingredients[i].pricePerUnit",
+            "order.ingredients[i].pricePerUnit.toFixed(2)", "order.ingredients[i].pricePerUnit",
+            "order.getTotalCost().toFixed(2)", "order.getTotalCost()"
         ]
     };
 
