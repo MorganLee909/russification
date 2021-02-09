@@ -60,9 +60,9 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let email_verification_js = Change {
         location: format!("{}{}", folder_location, "controllers/emailVerification.js"),
         changes: vec![
-            "{apiKey: process.env.MG_SUBLINE_APIKEY, domain: \"mail.thesubline.net\"}", "{apiKey: process.env.MG_PERSONAL_APIKEY, domain: \"mg.sanoinventarium.com\", host: \"api.eu.mailgun.net\"}",
-            "The Subline <clientsupport@thesubline.net>", "Sano Inventarium <no-reply@sanoinventarium.com>",
-            "clientsupport@mail.thesubline.com", "no-reply@mg.sanoinventarium.com",
+            "{apiKey: process.env.MG_SUBLINE_APIKEY, domain: \"mail.thesubline.net\"}", "{apiKey: process.env.MG_PERSONAL_APIKEY, domain: \"mg.oncontrol.kitchen\", host: \"api.eu.mailgun.net\"}",
+            "The Subline <clientsupport@thesubline.net>", "ONcontrol <no-reply@oncontrol.kitchen>",
+            "clientsupport@mail.thesubline.com", "no-reply@mg.oncontrol.kitchen",
             "ERROR: UNABLE TO SEND VERIFICATION EMAIL", "ОШИБКА: НЕВОЗМОЖНО ОТПРАВИТЬ ПМСЬМО ДЛЯ ПРОВЕРКИ",
             "ERROR: UNABLE TO CHANGE YOUR EMAIL ADDRESS", "ОШИБКА: НЕ УДАЛОСЬ СМЕНИТЬ ЭЛЕКТРОННУЮ ПОЧТУ",
             "UNABLE TO VERIFY EMAIL ADDRESS.  INCORRECT LINK", "НЕ УДАЛОСЬ ПОДТВЕРДИТЬ ЭЛЕКТРОННУЮ ПОЧТУ",
@@ -76,8 +76,8 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let password_reset_js = Change {
         location: format!("{}{}", folder_location, "controllers/passwordReset.js"),
         changes: vec![
-            "{apiKey: process.env.MG_SUBLINE_APIKEY, domain: \"mail.thesubline.net\"}", "{apiKey: process.env.MG_PERSONAL_APIKEY, domain: \"mg.sanoinventarium.com\", host: \"api.eu.mailgun.net\"}",
-            "The Subline <clientsupport@thesubline.net>", "Sano Inventarium <no-reply@sanoinventarium.com>",
+            "{apiKey: process.env.MG_SUBLINE_APIKEY, domain: \"mail.thesubline.net\"}", "{apiKey: process.env.MG_PERSONAL_APIKEY, domain: \"mg.oncontrol.kitchen\", host: \"api.eu.mailgun.net\"}",
+            "The Subline <clientsupport@thesubline.net>", "ONcontrol <no-reply@oncontrol.kitchen>",
             "PASSWORD MUST CONTAIN AT LEAST 10 CHARACTERS", "ПАРОЛЬ ДОЛЖЕН СОДЕРЖАТЬ НЕ МЕНЕЕ 10 СИМВОЛОВ",
             "ERROR: UNABLE TO UPDATE YOUR PASSWORD", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ ПАРОЛЬ",
             "USER WITH THIS EMAIL DOES NOT EXIST", "ПОЛЬЗОВАТЕЛЬ С ТАКИМ АДРЕСОМ НЕ СУЩЕСТВУЕТ",
@@ -91,7 +91,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let app_js = Change {
         location: format!("{}{}", folder_location, "app.js"),
         changes: vec![
-            "www.thesubline.com", "www.sanoinventarium.com"
+            "www.thesubline.com", "www.oncontrol.kitchen"
         ]
     };
 
