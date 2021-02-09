@@ -178,6 +178,8 @@ fn main() {
         Err(e) => panic!(e),
         _ => ()
     };
+    std::fs::copy("./passwordReset.js", "../InventoryManagement/emails/passwordReset.js");
+    std::fs::copy("./verifyEmail.js", "../InventoryManagement/emails/verifyEmail.js");
 
     // Images
     std::fs::copy("./images/oneLineLogo.png", "../InventoryManagement/views/shared/images/oneLineLogo.png").unwrap();
