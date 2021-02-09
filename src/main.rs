@@ -107,79 +107,16 @@ fn main() {
     }
 
     //Full pages to overwrite
-    let contents = match read_file("./landing.ejs") {
-        Ok(contents) => contents,
-        Err(e) => panic!(e)
-    };
-    match write_file("../InventoryManagement/views/otherPages/landing.ejs", contents) {
-        Err(e) => panic!(e),
-        _ => ()
-    };
-
-    let contents = match read_file("./login.ejs") {
-        Ok(contents) => contents,
-        Err(e) => panic!(e)
-    };
-    match write_file("../InventoryManagement/views/otherPages/login.ejs", contents) {
-        Err(e) => panic!(e),
-        _ => ()
-    };
-    
-    let contents = match read_file("./register.ejs") {
-        Ok(contents) => contents,
-        Err(e) => panic!(e)
-    };
-    match write_file("../InventoryManagement/views/otherPages/register.ejs", contents) {
-        Err(e) => panic!(e),
-        _ => ()
-    };
-
-    let contents = match read_file("./help.ejs") {
-        Ok(contents) => contents,
-        Err(e) => panic!(e)
-    };
-    match write_file("../InventoryManagement/views/informationPages/help.ejs", contents) {
-        Err(e) => panic!(e),
-        _ => ()
-    };
-
-    let contents = match read_file("./email.ejs") {
-        Ok(contents) => contents,
-        Err(e) => panic!(e)
-    };
-    match write_file("../InventoryManagement/views/passwordResetPages/email.ejs", contents) {
-        Err(e) => panic!(e),
-        _ => ()
-    };
-
-    let contents = match read_file("./password.ejs") {
-        Ok(contents) => contents,
-        Err(e) => panic!(e)
-    };
-    match write_file("../InventoryManagement/views/passwordResetPages/password.ejs", contents) {
-        Err(e) => panic!(e),
-        _ => ()
-    };
-
-    let contents = match read_file("./footer.ejs") {
-        Ok(contents) => contents,
-        Err(e) => panic!(e)
-    };
-    match write_file("../InventoryManagement/views/shared/footer.ejs", contents) {
-        Err(e) => panic!(e),
-        _ => ()
-    };
-
-    let contents = match read_file("./verify.ejs") {
-        Ok(contents) => contents,
-        Err(e) => panic!(e)
-    };
-    match write_file("../InventoryManagement/views/verifyPage/verify.ejs", contents) {
-        Err(e) => panic!(e),
-        _ => ()
-    };
-    std::fs::copy("./passwordReset.js", "../InventoryManagement/emails/passwordReset.js");
-    std::fs::copy("./verifyEmail.js", "../InventoryManagement/emails/verifyEmail.js");
+    std::fs::copy("./landing.ejs", "../InventoryManagement/views/otherPages/landing.ejs").unwrap();
+    std::fs::copy("./login.ejs", "../InventoryManagement/views/otherPages/login.ejs").unwrap();
+    std::fs::copy("./register.ejs", "../InventoryManagement/views/otherPages/register.ejs").unwrap();
+    std::fs::copy("./help.ejs", "../InventoryManagement/views/informationPages/help.ejs").unwrap();
+    std::fs::copy("./email.ejs", "../InventoryManagement/views/passwordResetPages/email.ejs").unwrap();
+    std::fs::copy("./password.ejs", "../InventoryManagement/views/passwordResetPages/password.ejs").unwrap();
+    std::fs::copy("./footer.ejs", "../InventoryManagement/views/shared/footer.ejs").unwrap();
+    std::fs::copy("./verify.ejs", "../InventoryManagement/views/verifyPage/verify.ejs").unwrap();
+    std::fs::copy("./passwordReset.js", "../InventoryManagement/emails/passwordReset.js").unwrap();
+    std::fs::copy("./verifyEmail.js", "../InventoryManagement/emails/verifyEmail.js").unwrap();
 
     // Images
     std::fs::copy("./images/oneLineLogo.png", "../InventoryManagement/views/shared/images/oneLineLogo.png").unwrap();
