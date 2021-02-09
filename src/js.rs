@@ -100,6 +100,13 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         ]
     };
 
+    let middleware_js = Change {
+        location: format!("{}{}", folder_location, "middleware.js"),
+        changes: vec![
+            "PLEASE LOG IN", "ВХОД"
+        ]
+    }
+
     vec![
         home_js,
         recipe_book_js,
@@ -109,6 +116,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         new_recipe_js,
         transaction_details_js,
         order_details_js,
-        recipe_details_js
+        recipe_details_js,
+        middleware_js
     ]
 }
