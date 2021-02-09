@@ -13,7 +13,8 @@ pub fn change<'a>() -> Vec<Change<'a>> {
             "QUANTITY", "КОЛИЧЕСТВО",
             "$$", "₽$",
             "title: \"$\"", "title: \"₽\"",
-            "SOMETHING WENT WRONG.  PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ."
+            "SOMETHING WENT WRONG.  PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "INGREDIENTS UPDATED", "ИНГРЕДИЕНТЫ ОБНОВЛЁН"
         ]
     };
 
@@ -21,7 +22,8 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/strands/recipeBook.js"),
         changes: vec![
             "$$", "₽$",
-            "SOMETHING WENT WRONG.  PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ."
+            "SOMETHING WENT WRONG.  PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "RECIPES SUCCESSFULLY UPDATED", "РЕЦЕПТ УСПЕШНО ОБНОВЛЁН"
         ]
     };
 
@@ -56,7 +58,8 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         changes: vec![
             "`INGREDIENT", "`ИНГРЕДИЕНТ",
             "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
-            "RECIPE CREATED", "РЕЦЕПТ СОЗДАН"
+            "RECIPE CREATED", "РЕЦЕПТ СОЗДАН",
+            "ALL INGREDIENTS SUCCESSFULLY CREATED", "ВСЕ ИНГРЕДИЕНТЫ УСПЕШНО СОЗДАНЫ"
         ]
     };
 
@@ -84,7 +87,8 @@ pub fn change<'a>() -> Vec<Change<'a>> {
             "Saturday", "суббота",
             "recipes`", "рецептов`",
             "$$", "₽$",
-            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ."
+            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "TRANSACTION REMOVED", "ТРАНЗАКЦИЯ УДАЛЕНА"
         ]
     };
 
@@ -98,7 +102,8 @@ pub fn change<'a>() -> Vec<Change<'a>> {
             "order.ingredients[i].pricePerUnit.toFixed(2)", "order.ingredients[i].pricePerUnit",
             "order.ingredients[i].pricePerUnit.toFixed(2)", "order.ingredients[i].pricePerUnit",
             "order.getTotalCost().toFixed(2)", "order.getTotalCost()",
-            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ."
+            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "ORDER REMOVED", "ЗАКАЗ УДАЛЁН"
         ]
     };
 
@@ -106,7 +111,8 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/sidebars/recipeDetails.js"),
         changes: vec![
             "$$", "₽$",
-            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ."
+            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "RECIPE REMOVED", "РЕЦЕПТ УДАЛЁН"
         ]
     };
 
@@ -156,14 +162,18 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let new_transaction_js = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/sidebars/newTransaction.js"),
         changes: vec![
-            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ."
+            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "TRANSACTION CREATED", "ТРАНЗАКЦИЯ СОЗДАНА",
+            "TRANSACTION SUCCESSFULLY CREATED.  INGREDIENTS UPDATED", "ТРАНЗАКЦИЯ УСПЕШНО СОЗДАНА. ИНГРЕДИЕНТЫ ОБНОВЛЕНЫ"
         ]
     };
 
     let transaction_filter_js = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/sidebars/transactionFilter.js"),
         changes: vec![
-            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ."
+            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "START DATE CANNOT BE AFTER END DATE", "ДАТА НАЧАЛА НЕ МОЖЕТ БЫТЬ ПОЗЖЕ ДАТЫ ОКОНЧАНИЯ",
+            "NO TRANSACTIONS MATCH YOUR SEARCH", "НЕТ ТРАНЗАКЦИЙ СООТВЕТСТВУЮЩИХ ВАШЕМУ ЗАПРОСУ"
         ]
     };
 
@@ -171,6 +181,13 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/sidebars/orderCalculator.js"),
         changes: vec![
             "ERROR: UNABLE TO MAKE PREDICTION", "ОШИБКА: НЕ УДАЛОСЬ СДЕЛАТЬ ПРОГНОЗ"
+        ]
+    };
+
+    let order_filter_js = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/js/sidebars/orderFilter.js"),
+        changes: vec![
+            "NO ORDERS MATCH YOUR SEARCH", "НЕТ ЗАКАЗОВ, СООТВЕТСТВУЮЩИХ ВАШЕМУ ЗАПРОСУ"
         ]
     };
 
@@ -199,6 +216,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         new_transaction_js,
         transaction_filter_js,
         order_calculator_js,
+        order_filter_js,
         middleware_js
     ]
 }
