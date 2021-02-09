@@ -1,6 +1,5 @@
 use std::fs::File;
 use std::io::prelude::*;
-// use walkdir::{DirEntry, WalkDir};
 
 mod ejs;
 mod js;

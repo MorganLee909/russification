@@ -39,7 +39,10 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         changes: vec![
             "ERROR: UNABLE TO RETRIEVE USER DATA",  "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
             "CANNOT FIND INGREDIENT", "НЕВОЗМОЖНО НАЙТИ ИНГРЕДИЕНТ",
-            "FROM RECIPE", "ИЗ РЕЦЕПТА"
+            "FROM RECIPE", "ИЗ РЕЦЕПТА",
+            "ERROR: UNABLE TO SAVE INGREDIENT", "ОШИБКА: НЕ УДАЛОСЬ СОХРАНИТЬ ИНГРЕДИЕНТ",
+            "ERROR: UNABLE TO UPDATE RECIPE", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ РЕЦЕПТ",
+            "ERROR: UNABLE TO CREATE YOUR RECIPES", "ОШИБКА: НЕ УДАЛОСЬ СОЗДАТЬ РЕЦЕПТЫ"
         ]
     };
 
@@ -59,7 +62,10 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         location: format!("{}{}", folder_location, "controllers/transactionData.js"),
         changes: vec![
             "NEW TRANSACTIONS MUST CONTAIN A DATE", "НОВАЯ ТРАНЗАКЦИЯ ДОЛЖНА СОДЕРЖАТЬ ДАТУ",
-            "COULD NOT FIND RECIPE", "НЕ УДАЛОСЬ НАЙТИ РЕЦЕПТ"
+            "COULD NOT FIND RECIPE", "НЕ УДАЛОСЬ НАЙТИ РЕЦЕПТ",
+            "ERROR: UNABLE TO RETRIEVE YOUR TRANSACTIONS", "ОШИБКА: НЕ УДАЛОСЬ ВОССТАНОВИТЬ ТРАНЗАКЦИИ",
+            "ERROR: UNABLE TO CREATE NEW TRANSACTION", "ОШИБКА: НЕ УДАЛОСЬ СОЗДАТЬ НОВУЮ ТРАНЗАКЦИЮ",
+            "ERROR: UNABLE TO DELETE THE TRANSACTION", "ОШИБКАж НЕ УДАЛОСЬ УДАЛОСЬ ТРАНЗАКЦИЮ"
         ]
     };
 
