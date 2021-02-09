@@ -17,7 +17,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
             "PASSWORD MUST CONTAIN AT LEAST 10 CHARACTERS", "ПАРОЛЬ ДОЛЖЕН СОДЕРЖАТЬ НЕ МЕНЕЕ 10 СИМВОЛОВ",
             "USER WITH THIS EMAIL ADDRESS ALREADY EXISTS", "ПОЛЬЗОВАТЕЛЬ С ТАКИМ ЭЛЕКТРОННЫМ АДРЕСОМ УЖЕ СУЩЕСТВУЕТ",
             "ERROR: UNABLE TO RETRIEVE USER DATA",  "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
-            "PASSWORD SUCCESSFULLY RESET. PLEASE LOG IN", "ПАРОЛЬ УСПЕШНО ИЗМЕНЁН. ВОЙДИТЕ, ПОЖАЛУЙСТА"
+            "PASSWORD SUCCESSFULLY RESET. PLEASE LOG IN", "ПАРОЛЬ УСПЕШНО ИЗМЕНЁН. ВОЙДИТЕ, ПОЖАЛУЙСТА",
             "ERROR: UNABLE TO UPDATE YOUR PASSWORD", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ ПАРОЛЬ",
             "ERROR: UNABLE TO CREATE ACCOUNT AT THIS TIME", "ОШИБКА: СЕЙЧАС НЕВОЗМОЖНО СОЗДАТЬ АККАУНТ",
             "ERROR: UNABLE TO UPDATE DATA", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ ДАННЫЕ"
@@ -50,7 +50,8 @@ pub fn change<'a>() -> Vec<Change<'a>> {
             "FROM ORDER", "ИЗ ЗАКАЗА",
             "ERROR: UNABLE TO RETRIEVE YOUR ORDERS", "ОШИБКА: НЕ УДАЛОСЬ ВОССТАНОВИТЬ ЗАКАЗЫ",
             "ERROR: UNABLE TO SAVE ORDER", "ОШИБКА: НЕ УДАЛОСЬ СОХРАНИТЬ ЗАКАЗ",
-            "ERROR: UNABLE TO CREATE YOUR ORDERS", "ОШИБКА: НЕ УДАЛОСЬ СОЗДАТЬ ЗАКАЗЫ"
+            "ERROR: UNABLE TO CREATE YOUR ORDERS", "ОШИБКА: НЕ УДАЛОСЬ СОЗДАТЬ ЗАКАЗЫ",
+            "ERROR: UNABLE TO REMOVE ORDER", "ОШИБКА: НЕ УДАЛОСЬ УДАЛИТЬ ЗАКАЗ"
         ]
     };
 

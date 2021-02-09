@@ -105,7 +105,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         changes: vec![
             "PLEASE LOG IN", "ВХОД"
         ]
-    }
+    };
 
     vec![
         home_js,
