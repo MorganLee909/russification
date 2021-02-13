@@ -13,7 +13,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
             "QUANTITY", "КОЛИЧЕСТВО",
             "$$", "₽$",
             "title: \"$\"", "title: \"₽\"",
-            "SOMETHING WENT WRONG.  PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
             "INGREDIENTS UPDATED", "ИНГРЕДИЕНТЫ ОБНОВЛЁН"
         ]
     };
@@ -22,7 +22,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/strands/recipeBook.js"),
         changes: vec![
             "$$", "₽$",
-            "SOMETHING WENT WRONG.  PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
             "RECIPES SUCCESSFULLY UPDATED", "РЕЦЕПТ УСПЕШНО ОБНОВЛЁН"
         ]
     };
@@ -50,6 +50,14 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/strands/transactions.js"),
         changes: vec![
             "$$", "₽$"
+        ]
+    };
+
+    let account_js = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/js/strands/account.js"),
+        changes: vec![
+            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "DATA UPDATED", "ДАННЫЕ ОБНОВИЛИ"
         ]
     };
 
@@ -119,7 +127,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let edit_ingredient_js = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/sidebars/editIngredient.js"),
         changes: vec![
-            "SOMETHING WENT WRONG, PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
             "INGREDIENT UPDATED", "ИНГРЕДИЕНТ ОБНОВЛЁН"
         ]
     };
@@ -127,7 +135,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let edit_recipe_js = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/sidebars/editRecipe.js"),
         changes: vec![
-            "SOMETHING WENT WRONG, PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
             "RECIPE UPDATED", "РЕЦЕПТ ОБНОВЛЁН"
         ]
     };
@@ -144,7 +152,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let new_ingredient_js = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/sidebars/newIngredient.js"),
         changes: vec![
-            "SOMETHING WENT WRONG.  TRY REFRESHING THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
             "INGREDIENT CREATED", "ИНГРЕДИЕНТ СОЗДАН",
             "INGREDIENTS SUCCESSFULLY ADDED", "ИНГРЕДИЕНТ УСПЕШНО ДОБАВЛЕН"
         ]
@@ -153,7 +161,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let new_order_js = Change {
         location: format!("{}{}", folder_location, "views/dashboardPage/js/sidebars/newOrder.js"),
         changes: vec![
-            "SOMETHING WENT WRONG, PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
+            "SOMETHING WENT WRONG. PLEASE REFRESH THE PAGE", "ЧТО-ТО ПОШЛО НЕ ТАК. ПОЖАЛУЙСТА, ОБНОВИТЕ СТРАНИЦУ.",
             "NEW ORDER CREATED", "НОВЫЙ ЗАКАЗ СОЗДАН",
             "ORDER CREATED AND INGREDIENTS UPDATED SUCCESSFULLY", "ЗАКАЗ СОЗДАН, ИНГРЕДИЕНТЫ УСПЕШНО ОБНОВЛЕНЫ"
         ]
@@ -194,7 +202,8 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let middleware_js = Change {
         location: format!("{}{}", folder_location, "middleware.js"),
         changes: vec![
-            "PLEASE LOG IN", "ВХОД"
+            "PLEASE LOG IN", "ВХОД",
+            "ERROR: UNABLE TO RETRIEVE DATA", "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ"
         ]
     };
 
@@ -204,6 +213,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         analytics_js,
         orders_js,
         transactions_js,
+        account_js,
         new_recipe_js,
         transaction_details_js,
         order_details_js,

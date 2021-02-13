@@ -6,7 +6,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let renderer_js = Change {
         location: format!("{}{}", folder_location, "controllers/renderer.js"),
         changes: vec![
-            "ERROR: UNABLE TO RETRIEVE USER DATA",  "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
+            "ERROR: UNABLE TO RETRIEVE DATA",  "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
             "PLEASE VERIFY YOUR EMAIL ADDRESS", "ПОЖАЛУЙСТА, ПРОВЕРТЬЕ ВАШ ЭЛЕКТРОННЫЙ АДРЕС"
         ]
     };
@@ -16,7 +16,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         changes: vec![
             "PASSWORD MUST CONTAIN AT LEAST 10 CHARACTERS", "ПАРОЛЬ ДОЛЖЕН СОДЕРЖАТЬ НЕ МЕНЕЕ 10 СИМВОЛОВ",
             "USER WITH THIS EMAIL ADDRESS ALREADY EXISTS", "ПОЛЬЗОВАТЕЛЬ С ТАКИМ ЭЛЕКТРОННЫМ АДРЕСОМ УЖЕ СУЩЕСТВУЕТ",
-            "ERROR: UNABLE TO RETRIEVE USER DATA",  "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
+            "ERROR: UNABLE TO RETRIEVE DATA",  "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
             "PASSWORD SUCCESSFULLY RESET. PLEASE LOG IN", "ПАРОЛЬ УСПЕШНО ИЗМЕНЁН. ВОЙДИТЕ, ПОЖАЛУЙСТА",
             "ERROR: UNABLE TO UPDATE YOUR PASSWORD", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ ПАРОЛЬ",
             "ERROR: UNABLE TO CREATE ACCOUNT AT THIS TIME", "ОШИБКА: СЕЙЧАС НЕВОЗМОЖНО СОЗДАТЬ АККАУНТ",
@@ -34,21 +34,22 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let ingredient_data_js = Change {
         location: format!("{}{}", folder_location, "controllers/ingredientData.js"),
         changes: vec![
-            "ERROR: UNABLE TO RETRIEVE USER DATA",  "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
+            "ERROR: UNABLE TO RETRIEVE DATA",  "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
             "ERROR: UNABLE TO CREATE THE INGREDIENT", "ОШИБКА: НЕ УДАЛОСЬ СОЗДАТЬ ИНГРЕДИЕНТ",
             "ERROR: UNABLE TO UPDATE THE INGREDIENT", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ ИНГРЕДИЕНТ",
-            "ERROR: UNABLE TO CREATE YOUR INGREDIENTS", "ОШИБКА: НЕ УДАЛОСЬ СОЗДАТЬ ИНГРЕДИЕНТЫ"
+            "ERROR: UNABLE TO CREATE YOUR INGREDIENTS", "ОШИБКА: НЕ УДАЛОСЬ СОЗДАТЬ ИНГРЕДИЕНТЫ",
+            "ERROR: UNABLE TO UPDATE DATA", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ ДАННЫЕ"
         ]
     };
 
     let recipe_data_js = Change {
         location: format!("{}{}", folder_location, "controllers/recipeData.js"),
         changes: vec![
-            "ERROR: UNABLE TO RETRIEVE USER DATA",  "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
+            "ERROR: UNABLE TO RETRIEVE DATA",  "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
             "CANNOT FIND INGREDIENT", "НЕВОЗМОЖНО НАЙТИ ИНГРЕДИЕНТ",
             "FROM RECIPE", "ИЗ РЕЦЕПТА",
             "ERROR: UNABLE TO SAVE INGREDIENT", "ОШИБКА: НЕ УДАЛОСЬ СОХРАНИТЬ ИНГРЕДИЕНТ",
-            "ERROR: UNABLE TO UPDATE RECIPE", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ РЕЦЕПТ",
+            "ERROR: UNABLE TO UPDATE DATA", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ РЕЦЕПТ",
             "ERROR: UNABLE TO CREATE YOUR RECIPES", "ОШИБКА: НЕ УДАЛОСЬ СОЗДАТЬ РЕЦЕПТЫ"
         ]
     };
@@ -58,7 +59,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         changes: vec![
             "CANNOT FIND INGREDIENT", "НЕВОЗМОЖНО НАЙТИ ИНГРЕДИЕНТ",
             "FROM ORDER", "ИЗ ЗАКАЗА",
-            "ERROR: UNABLE TO RETRIEVE YOUR ORDERS", "ОШИБКА: НЕ УДАЛОСЬ ВОССТАНОВИТЬ ЗАКАЗЫ",
+            "ERROR: UNABLE TO RETRIEVE DATA", "ОШИБКА: НЕ УДАЛОСЬ ВОССТАНОВИТЬ ЗАКАЗЫ",
             "ERROR: UNABLE TO SAVE ORDER", "ОШИБКА: НЕ УДАЛОСЬ СОХРАНИТЬ ЗАКАЗ",
             "ERROR: UNABLE TO CREATE YOUR ORDERS", "ОШИБКА: НЕ УДАЛОСЬ СОЗДАТЬ ЗАКАЗЫ",
             "ERROR: UNABLE TO REMOVE ORDER", "ОШИБКА: НЕ УДАЛОСЬ УДАЛИТЬ ЗАКАЗ"
@@ -70,8 +71,9 @@ pub fn change<'a>() -> Vec<Change<'a>> {
         changes: vec![
             "NEW TRANSACTIONS MUST CONTAIN A DATE", "НОВАЯ ТРАНЗАКЦИЯ ДОЛЖНА СОДЕРЖАТЬ ДАТУ",
             "COULD NOT FIND RECIPE", "НЕ УДАЛОСЬ НАЙТИ РЕЦЕПТ",
-            "ERROR: UNABLE TO RETRIEVE YOUR TRANSACTIONS", "ОШИБКА: НЕ УДАЛОСЬ ВОССТАНОВИТЬ ТРАНЗАКЦИИ",
+            "ERROR: UNABLE TO RETRIEVE DATA", "ОШИБКА: НЕ УДАЛОСЬ ВОССТАНОВИТЬ ТРАНЗАКЦИИ",
             "ERROR: UNABLE TO CREATE NEW TRANSACTION", "ОШИБКА: НЕ УДАЛОСЬ СОЗДАТЬ НОВУЮ ТРАНЗАКЦИЮ",
+            "ERROR: UNABLE TO CREATE YOUR TRANSACTION", "ОШИБКА: НЕ УДАЛОСЬ СОЗДАТЬ НОВУЮ ТРАНЗАКЦИЮ",
             "ERROR: UNABLE TO DELETE THE TRANSACTION", "ОШИБКАж НЕ УДАЛОСЬ УДАЛОСЬ ТРАНЗАКЦИЮ"
         ]
     };
@@ -79,7 +81,7 @@ pub fn change<'a>() -> Vec<Change<'a>> {
     let other_data_js = Change {
         location: format!("{}{}", folder_location, "controllers/otherData.js"),
         changes: vec![
-            "ERROR: UNABLE TO RETRIEVE USER DATA",  "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
+            "ERROR: UNABLE TO RETRIEVE DATA",  "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
             "INVALID EMAIL OR PASSWORD", "НЕВЕРНАЯ ПОЧТА ИЛИ ПАРОЛЬ"
         ]
     };
@@ -93,7 +95,9 @@ pub fn change<'a>() -> Vec<Change<'a>> {
             "\"l\"", "\"л\"",
             "\"mm\"", "\"мм\"",
             "\"cm\"", "\"см\"",
-            "\"m\"", "\"м\""
+            "\"m\"", "\"м\"",
+            "ERROR: UNABLE TO RETRIEVE DATA", "ОШИБКА: НЕ УДАЛОСЬ ПОЛУЧИТЬ ДАННЫЕ",
+            "ERROR: UNABLE TO UPDATE DATA", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ ДАННЫЕ"
         ]
     };
 
