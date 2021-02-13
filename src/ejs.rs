@@ -27,6 +27,7 @@ pub fn change<'b>() -> Vec<Change<'b>> {
             "TRANSACTIONS", "ТРАНЗАКЦИИ",
             "ACCOUNT", "АКАУНТ",
             "LOGOUT", "ВЫХОД",
+            "<a href=\"/help\">Help</a>", "<a href=\"/help\">Помощь</a>"
         ]
     };
 
