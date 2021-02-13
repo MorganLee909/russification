@@ -48,6 +48,7 @@ fn main() {
     std::fs::copy("./verify.ejs", "../InventoryManagement/views/verifyPage/verify.ejs").unwrap();
     std::fs::copy("./passwordReset.js", "../InventoryManagement/emails/passwordReset.js").unwrap();
     std::fs::copy("./verifyEmail.js", "../InventoryManagement/emails/verifyEmail.js").unwrap();
+    std::fs::copy("./loader.ejs", "../InventoryManagement/views/shared/loader.ejs").unwrap();
 
     // Images
     std::fs::copy("./images/oneLineLogo.png", "../InventoryManagement/views/shared/images/oneLineLogo.png").unwrap();
