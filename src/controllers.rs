@@ -20,7 +20,14 @@ pub fn change<'a>() -> Vec<Change<'a>> {
             "PASSWORD SUCCESSFULLY RESET. PLEASE LOG IN", "ПАРОЛЬ УСПЕШНО ИЗМЕНЁН. ВОЙДИТЕ, ПОЖАЛУЙСТА",
             "ERROR: UNABLE TO UPDATE YOUR PASSWORD", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ ПАРОЛЬ",
             "ERROR: UNABLE TO CREATE ACCOUNT AT THIS TIME", "ОШИБКА: СЕЙЧАС НЕВОЗМОЖНО СОЗДАТЬ АККАУНТ",
-            "ERROR: UNABLE TO UPDATE DATA", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ ДАННЫЕ"
+            "ERROR: UNABLE TO UPDATE DATA", "ОШИБКА: НЕ УДАЛОСЬ ОБНОВИТЬ ДАННЫЕ",
+            "MG_SUBLINE_APIKEY", "MG_PERSONAL_APIKEY",
+            "mail.thesubline.net", "mg.oncontrol.kitchen",
+            "The Subline <clientsupport@thesubline.net>", "ONcontrol <clientsupport@oncontrol.kitchen>",
+            "Email Verification", "Провертье Электронный Адрес",
+            "PLEASE LOG IN", "ВОЙТИ",
+            "ERROR: UNABLE TO UPDATE PASSWORD", "ОШИБКА: НЕ УДАЛОСЬ СМЕНИТЬ ПАРОЛЬ",
+            "INCORRECT PASSWORD", "НЕВЕРНЫЙ ПАРОЛЬ"
         ]
     };
 
