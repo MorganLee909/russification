@@ -25,6 +25,7 @@ pub fn change<'b>() -> Vec<Change<'b>> {
             "ANALYTICS", "АНАЛИТИКА",
             "ORDERS", "ЗАКАЗЫ",
             "TRANSACTIONS", "ТРАНЗАКЦИИ",
+            "ACCOUNT", "АКАУНТ",
             "LOGOUT", "ВЫХОД",
         ]
     };
@@ -98,6 +99,20 @@ pub fn change<'b>() -> Vec<Change<'b>> {
             "TRANSACTIONS", "ТРАНЗАКЦИИ",
             "NEW", "НОВЫЙ",
             "FILTER", "ФИЛЬТРОВАТЬ"
+        ]
+    };
+
+    let account_ejs = Change {
+        location: format!("{}{}", folder_location, "views/dashboardPage/ejs/strands/account.ejs"),
+        changes: vec![
+            "EMAIL", "ЭЛЕКТРОННАЯ ПОЧТА",
+            "UPDATE", "ОБНОВИТЬ",
+            "CHANGE PASSWORD", "ИЗМЕНЕНИЕ ПАРОЛЯ",
+            "CURRENT PASSWORD", "ТЕКУЩИЙ ПАРОЛЬ",
+            "CONFIRM NEW PASSWORD", "ПОДТВЕРДИТЕ НОВЫЙ ПАРОЛЬ",
+            "NEW PASSWORD", "НОВЫЙ ПАРОЛЬ",
+            "CANCEL", "ОТМЕНИТЬ",
+            "This will log you out of all current sessions", "Это позволит вам выйти из всех устройств"
         ]
     };
 
@@ -282,6 +297,7 @@ pub fn change<'b>() -> Vec<Change<'b>> {
         orders_ejs,
         recipe_book_ejs,
         transactions_ejs,
+        account_ejs,
         edit_ingredient_ejs,
         edit_recipe_ejs,
         ingredient_details_ejs,
